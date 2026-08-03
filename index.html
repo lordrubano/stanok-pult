@@ -1,0 +1,282 @@
+<title>Пульт станка PDF→Excel</title>
+<style>
+:root{
+  --bg:#f6f7f9; --card:#fff; --ink:#16181d; --dim:#6b7280; --line:#e3e6ea;
+  --closed:#1a7f4b; --closedbg:#e6f4ec; --open:#8a8f98; --openbg:#eef0f3;
+  --steps:#2f6fd0; --weight:#7a5af0; --track:#e7eaee;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1115; --card:#171a20; --ink:#e8eaed; --dim:#9aa1ab; --line:#262a32;
+    --closed:#4ade80; --closedbg:#12301f; --open:#8a919c; --openbg:#20242b;
+    --steps:#6aa3f5; --weight:#a78bfa; --track:#252932;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --card:#171a20; --ink:#e8eaed; --dim:#9aa1ab; --line:#262a32;
+  --closed:#4ade80; --closedbg:#12301f; --open:#8a919c; --openbg:#20242b;
+  --steps:#6aa3f5; --weight:#a78bfa; --track:#252932;
+}
+:root[data-theme="light"]{
+  --bg:#f6f7f9; --card:#fff; --ink:#16181d; --dim:#6b7280; --line:#e3e6ea;
+  --closed:#1a7f4b; --closedbg:#e6f4ec; --open:#8a8f98; --openbg:#eef0f3;
+  --steps:#2f6fd0; --weight:#7a5af0; --track:#e7eaee;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.5 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.mono{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace;font-size:.92em}
+.wrap{max-width:1000px;margin:0 auto;padding:28px 18px 60px}
+header{margin-bottom:20px}
+h1{font-size:24px;margin:0 0 4px;letter-spacing:-.01em}
+.sub{margin:0;color:var(--dim);font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:18px;margin-bottom:16px}
+.card h2{font-size:15px;margin:0 0 14px;font-weight:600}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:640px){.grid2{grid-template-columns:1fr}}
+.label{font-size:12px;color:var(--dim);margin-bottom:6px}
+.big{font-size:26px;font-weight:600;margin-bottom:8px;letter-spacing:-.02em}
+.of{font-size:14px;font-weight:400;color:var(--dim)}
+.metric.small .label{margin-bottom:8px}
+.bar{height:8px;background:var(--track);border-radius:99px;overflow:hidden}
+.bar span{display:block;height:100%;border-radius:99px}
+.bar.steps span{background:var(--steps)}
+.bar.weight span{background:var(--weight)}
+.barval{font-size:12px;color:var(--dim);margin-top:5px}
+.note{font-size:12px;color:var(--dim);margin:-8px 0 12px}
+ul.vn{list-style:none;margin:0;padding:0}
+ul.vn li{display:flex;align-items:center;gap:10px;padding:8px 0;
+  border-top:1px solid var(--line)}
+ul.vn li:first-child{border-top:0}
+.vnid{font-family:ui-monospace,Consolas,monospace;font-size:12px;color:var(--dim);
+  min-width:42px}
+.vnname{flex:1}
+.dot{width:8px;height:8px;border-radius:99px;background:var(--open);flex:none}
+.dot.closed{background:var(--closed)}
+.pill{font-size:11px;padding:2px 8px;border-radius:99px;white-space:nowrap;
+  background:var(--openbg);color:var(--open)}
+.pill.closed{background:var(--closedbg);color:var(--closed)}
+.phase{border-top:1px solid var(--line)}
+.phase:first-child{border-top:0}
+summary{cursor:pointer;padding:11px 0;display:flex;align-items:baseline;
+  gap:12px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸";color:var(--dim);font-size:11px;transition:transform .15s}
+.phase[open] summary::before{transform:rotate(90deg)}
+.pname{font-weight:600}
+.pcount{color:var(--dim);font-size:12.5px;margin-left:auto}
+.pbody{padding:4px 0 18px}
+table{width:100%;border-collapse:collapse;margin-top:16px;font-size:13.5px;
+  display:block;overflow-x:auto}
+th{text-align:left;font-weight:500;font-size:11.5px;color:var(--dim);
+  text-transform:uppercase;letter-spacing:.04em;padding:0 10px 7px 0;
+  border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:8px 10px 8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.c,th.c{text-align:center;padding-right:0;width:1%;white-space:nowrap}
+td.cx{color:var(--dim);white-space:nowrap}
+tr.closed td:nth-child(2){color:var(--ink)}
+tr.open td:nth-child(2){color:var(--dim)}
+.prim{font-size:12px;color:var(--dim);margin-top:2px}
+footer{color:var(--dim);font-size:12px;padding-top:4px}
+footer p{margin:0}
+</style>
+<div class="wrap">
+<header>
+<h1>Пульт станка PDF→Excel</h1>
+<p class="sub">Состояние взято только из реестра. Собрано 03.08.2026 18:31.</p>
+</header>
+<section class="card total">
+<h2>Весь план</h2>
+<div class="grid2">
+<div class="metric"><div class="label">Закрыто шагов</div><div class="big">17 <span class="of">из 77</span></div><div class="bar steps"><span style="width:22.1%"></span></div><div class="barval">22,1%</div></div>
+<div class="metric"><div class="label">Закрыто веса</div><div class="big">42,5 <span class="of">из 239,5</span></div><div class="bar weight"><span style="width:17.7%"></span></div><div class="barval">17,7%</div></div>
+</div></section>
+<section class="card outside">
+<h2>Вне нумерации</h2>
+<p class="note">В проценты плана не входят.</p>
+<ul class="vn">
+<li><span class="dot closed"></span><span class="vnid">VN-1</span><span class="vnname">Канал обмена CF_EXCHANGE открыт и проверен</span><span class="pill closed">закрыт</span></li>
+<li><span class="dot closed"></span><span class="vnid">VN-2</span><span class="vnname">Макет пульта показан владельцу</span><span class="pill closed">закрыт</span></li>
+<li><span class="dot open"></span><span class="vnid">VN-3</span><span class="vnname">Публикация пульта для удалённого наблюдения коллегами</span><span class="pill open">не начат</span></li>
+</ul></section>
+<section class="card">
+<h2>Фазы</h2>
+<div class="phases">
+<details class="phase" open>
+<summary>
+<span class="pname">Фаза 0</span>
+<span class="pcount">4/6 шагов · 5,5/10,5 веса</span>
+</summary>
+<div class="pbody">
+<div class="grid2">
+<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:66.7%"></span></div><div class="barval">66,7%</div></div>
+<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:52.4%"></span></div><div class="barval">52,4%</div></div>
+</div>
+<table><thead><tr><th class="c">№</th><th>Шаг</th><th>Сложность</th><th class="c">Вес</th><th>Состояние</th></tr></thead><tbody>
+<tr class="closed"><td class="c mono">1</td><td>Репозиторий станка, изолированный от Фабрики кода</td><td class="cx">простой</td><td class="c mono">1</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">2</td><td>Фиксация рабочего окружения: точные версии пакетов</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">3</td><td>Офсайт-копирование репозитория и корпуса</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">4</td><td>Решение владельца: целевая ОС и оборудование<div class="prim">Windows без привязок к платформе в коде</div></td><td class="cx">очень простой</td><td class="c mono">0,5</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="open"><td class="c mono">5</td><td>Решение владельца: первый банк или семейство документов</td><td class="cx">простой</td><td class="c mono">1</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">6</td><td>Решение владельца: права на корпус и обезличивание</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+</tbody></table></div></details>
+<details class="phase" open>
+<summary>
+<span class="pname">Фаза 1</span>
+<span class="pcount">13/13 шагов · 37/37 веса</span>
+</summary>
+<div class="pbody">
+<div class="grid2">
+<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:100.0%"></span></div><div class="barval">100%</div></div>
+<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:100.0%"></span></div><div class="barval">100%</div></div>
+</div>
+<table><thead><tr><th class="c">№</th><th>Шаг</th><th>Сложность</th><th class="c">Вес</th><th>Состояние</th></tr></thead><tbody>
+<tr class="closed"><td class="c mono">7</td><td>Экспортёр Excel: пять листов, разведение назначения</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">8</td><td>Защита от формульной инъекции</td><td class="cx">простой</td><td class="c mono">1</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">9</td><td>Ведущие нули и длинные идентификаторы текстом</td><td class="cx">простой</td><td class="c mono">1</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">10</td><td>Безопасный предел значащих цифр</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">11</td><td>Явные форматы дат и валют, запрет макросов</td><td class="cx">простой</td><td class="c mono">1</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">12</td><td>Ограничения длины ячейки, строк, размера книги</td><td class="cx">простой</td><td class="c mono">1</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">13</td><td>Мутационная приёмка выгрузки</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">14</td><td>Канонический JSON записи</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">15</td><td>Нормализация текста: NFC, пробелы, исходное и нормализованное</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">16</td><td>Обратная сериализация и видимое сравнение</td><td class="cx">очень сложный</td><td class="c mono">7</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">17</td><td>Паспорт запуска: манифест, подпись, проверка подписи</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">18</td><td>Журнал запусков и событий</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">19</td><td>Версионирование схемы и миграции</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
+</tbody></table></div></details>
+<details class="phase">
+<summary>
+<span class="pname">Фаза 2</span>
+<span class="pcount">0/12 шагов · 0/35 веса</span>
+</summary>
+<div class="pbody">
+<div class="grid2">
+<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:0.0%"></span></div><div class="barval">0%</div></div>
+<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:0.0%"></span></div><div class="barval">0%</div></div>
+</div>
+<table><thead><tr><th class="c">№</th><th>Шаг</th><th>Сложность</th><th class="c">Вес</th><th>Состояние</th></tr></thead><tbody>
+<tr class="open"><td class="c mono">20</td><td>Приём файла как недоверенного: хеш байтов</td><td class="cx">простой</td><td class="c mono">1</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">21</td><td>Лимиты размера, страниц, времени, памяти</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">22</td><td>Защита от архивных бомб и обхода каталогов</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">23</td><td>Политика шифрованных и повреждённых файлов</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">24</td><td>Изолированный запуск обработчиков</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">25</td><td>Слой адаптеров: единая розетка распознавателей</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">26</td><td>Адаптер нативных маршрутов DOCX и XLSX</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">27</td><td>Адаптер структурированных банковских форматов</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">28</td><td>Адаптер разбора PDF с координатами областей</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">29</td><td>Типизатор: Decimal, даты, словари, оригинал рядом</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">30</td><td>Решение владельца: внешняя передача и белый список</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">31</td><td>Адаптер внешнего резерва, выключен по умолчанию</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+</tbody></table></div></details>
+<details class="phase">
+<summary>
+<span class="pname">Фаза 3</span>
+<span class="pcount">0/14 шагов · 0/59 веса</span>
+</summary>
+<div class="pbody">
+<div class="grid2">
+<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:0.0%"></span></div><div class="barval">0%</div></div>
+<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:0.0%"></span></div><div class="barval">0%</div></div>
+</div>
+<table><thead><tr><th class="c">№</th><th>Шаг</th><th>Сложность</th><th class="c">Вес</th><th>Состояние</th></tr></thead><tbody>
+<tr class="open"><td class="c mono">32</td><td>Сегментатор: страницы, области, таблицы, строки</td><td class="cx">очень сложный</td><td class="c mono">7</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">33</td><td>Устойчивые адреса источника</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">34</td><td>Карта покрытия источника</td><td class="cx">очень сложный</td><td class="c mono">7</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">35</td><td>Статусы полноты и блокировка допуска</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">36</td><td>Счётчики объектов и продолжений таблиц</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">37</td><td>Язык оснастки: версионированная политика семейства</td><td class="cx">очень сложный</td><td class="c mono">7</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">38</td><td>Отказ ядра от неподдерживаемой версии оснастки</td><td class="cx">простой</td><td class="c mono">1</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">39</td><td>Проверки: типы, обязательность, словари</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">40</td><td>Проверки: порядок, дубликаты, пропуски</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">41</td><td>Проверки: суммы, балансы, валюты раздельно</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">42</td><td>Проверки: доменные и межполевые правила</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">43</td><td>Независимая перепроверка: изображение против текста</td><td class="cx">очень сложный</td><td class="c mono">7</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">44</td><td>Три режима перепроверки с переходами по метрикам</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">45</td><td>Движок политик: единственное место рождения статуса</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+</tbody></table></div></details>
+<details class="phase">
+<summary>
+<span class="pname">Фаза 4</span>
+<span class="pcount">0/9 шагов · 0/31 веса</span>
+</summary>
+<div class="pbody">
+<div class="grid2">
+<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:0.0%"></span></div><div class="barval">0%</div></div>
+<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:0.0%"></span></div><div class="barval">0%</div></div>
+</div>
+<table><thead><tr><th class="c">№</th><th>Шаг</th><th>Сложность</th><th class="c">Вес</th><th>Состояние</th></tr></thead><tbody>
+<tr class="open"><td class="c mono">46</td><td>Сбор реальных документов первого семейства</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">47</td><td>Разделение наборов без пересечения источников</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">48</td><td>Инструкция разметки и обучение разметчиков</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">49</td><td>Двойная ручная разметка критических полей</td><td class="cx">очень сложный</td><td class="c mono">7</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">50</td><td>Наполнение корпуса обязательными дефектами</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">51</td><td>Стенд измерения: девять метрик</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">52</td><td>Решение владельца: целевая доля ошибок автодопуска</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">53</td><td>Прогон закрытого набора</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">54</td><td>Отчёт допуска первой оснастки</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+</tbody></table></div></details>
+<details class="phase">
+<summary>
+<span class="pname">Фаза 5</span>
+<span class="pcount">0/7 шагов · 0/15 веса</span>
+</summary>
+<div class="pbody">
+<div class="grid2">
+<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:0.0%"></span></div><div class="barval">0%</div></div>
+<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:0.0%"></span></div><div class="barval">0%</div></div>
+</div>
+<table><thead><tr><th class="c">№</th><th>Шаг</th><th>Сложность</th><th class="c">Вес</th><th>Состояние</th></tr></thead><tbody>
+<tr class="open"><td class="c mono">55</td><td>Экран разбора: фрагмент источника рядом с полями</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">56</td><td>Отображение расхождений движков и нормализации</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">57</td><td>Четыре действия оператора</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">58</td><td>Неизменяемая история исправлений</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">59</td><td>Запрет исправленного результата как источника</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">60</td><td>Разграничение ролей</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">61</td><td>Измерение времени и причин ручного труда</td><td class="cx">простой</td><td class="c mono">1</td><td><span class="pill open">не начат</span></td></tr>
+</tbody></table></div></details>
+<details class="phase">
+<summary>
+<span class="pname">Фаза 6</span>
+<span class="pcount">0/8 шагов · 0/21 веса</span>
+</summary>
+<div class="pbody">
+<div class="grid2">
+<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:0.0%"></span></div><div class="barval">0%</div></div>
+<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:0.0%"></span></div><div class="barval">0%</div></div>
+</div>
+<table><thead><tr><th class="c">№</th><th>Шаг</th><th>Сложность</th><th class="c">Вес</th><th>Состояние</th></tr></thead><tbody>
+<tr class="open"><td class="c mono">62</td><td>Идемпотентный повтор запуска</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">63</td><td>Наблюдаемость этапов</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">64</td><td>Восстановление после частичного сбоя</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">65</td><td>Испытание автономности</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">66</td><td>Обнаружение дрейфа</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">67</td><td>Вторая и третья оснастки</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">68</td><td>Памятка и обучение операторов</td><td class="cx">простой</td><td class="c mono">1</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">69</td><td>Замер сэкономленного времени и полной стоимости</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+</tbody></table></div></details>
+<details class="phase">
+<summary>
+<span class="pname">Фаза 7</span>
+<span class="pcount">0/8 шагов · 0/31 веса</span>
+</summary>
+<div class="pbody">
+<div class="grid2">
+<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:0.0%"></span></div><div class="barval">0%</div></div>
+<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:0.0%"></span></div><div class="barval">0%</div></div>
+</div>
+<table><thead><tr><th class="c">№</th><th>Шаг</th><th>Сложность</th><th class="c">Вес</th><th>Состояние</th></tr></thead><tbody>
+<tr class="open"><td class="c mono">70</td><td>Разделение изделий: ядро и пакеты оснастки</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">71</td><td>Установка на чужой машине</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">72</td><td>Обновление у клиента без потери прошлого</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">73</td><td>Перечень состава выпуска</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">74</td><td>Лицензирование и техническая защита поставки</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">75</td><td>Решение владельца: тарифы и условия подписки</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">76</td><td>Доказательный пакет для клиента</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">77</td><td>Пилот у внешнего клиента</td><td class="cx">очень сложный</td><td class="c mono">7</td><td><span class="pill open">не начат</span></td></tr>
+</tbody></table></div></details>
+</div></section>
+<footer><p>Источник: <span class="mono">registry/registry.csv</span>, SHA-256 <span class="mono">1D2CD2023376D4B0…</span>. Состояния в реестре: закрыт, не начат. Пересборка: <span class="mono">python pult/build.py</span>.</p></footer>
+</div>
