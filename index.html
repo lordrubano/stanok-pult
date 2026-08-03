@@ -85,13 +85,13 @@ footer p{margin:0}
 <div class="wrap">
 <header>
 <h1>Пульт станка PDF→Excel</h1>
-<p class="sub">Состояние взято только из реестра. Собрано 03.08.2026 19:37.</p>
+<p class="sub">Состояние взято только из реестра. Собрано 03.08.2026 19:59.</p>
 </header>
 <section class="card total">
 <h2>Весь план</h2>
 <div class="grid2">
-<div class="metric"><div class="label">Закрыто шагов</div><div class="big">21 <span class="of">из 77</span></div><div class="bar steps"><span style="width:27.3%"></span></div><div class="barval">27,3%</div></div>
-<div class="metric"><div class="label">Закрыто веса</div><div class="big">51,5 <span class="of">из 239,5</span></div><div class="bar weight"><span style="width:21.5%"></span></div><div class="barval">21,5%</div></div>
+<div class="metric"><div class="label">Закрыто шагов</div><div class="big">22 <span class="of">из 77</span></div><div class="bar steps"><span style="width:28.6%"></span></div><div class="barval">28,6%</div></div>
+<div class="metric"><div class="label">Закрыто веса</div><div class="big">55,5 <span class="of">из 239,5</span></div><div class="bar weight"><span style="width:23.2%"></span></div><div class="barval">23,2%</div></div>
 </div></section>
 <section class="card outside">
 <h2>Вне нумерации</h2>
@@ -150,19 +150,19 @@ footer p{margin:0}
 <details class="phase" open>
 <summary>
 <span class="pname">Фаза 2</span>
-<span class="pcount">4/12 шагов · 9/35 веса</span>
+<span class="pcount">5/12 шагов · 13/35 веса</span>
 </summary>
 <div class="pbody">
 <div class="grid2">
-<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:33.3%"></span></div><div class="barval">33,3%</div></div>
-<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:25.7%"></span></div><div class="barval">25,7%</div></div>
+<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:41.7%"></span></div><div class="barval">41,7%</div></div>
+<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:37.1%"></span></div><div class="barval">37,1%</div></div>
 </div>
 <table><thead><tr><th class="c">№</th><th>Шаг</th><th>Сложность</th><th class="c">Вес</th><th>Состояние</th></tr></thead><tbody>
 <tr class="closed"><td class="c mono">20</td><td>Приём файла как недоверенного: хеш байтов<div class="prim">Паспорт входа intake-passport/1, обезвреживание имени</div></td><td class="cx">простой</td><td class="c mono">1</td><td><span class="pill closed">закрыт</span></td></tr>
 <tr class="closed"><td class="c mono">21</td><td>Лимиты размера, страниц, времени, памяти<div class="prim">Пределы утверждены владельцем 03.08.2026, принуждение времени и памяти - шаг 24</div></td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill closed">закрыт</span></td></tr>
 <tr class="closed"><td class="c mono">22</td><td>Защита от архивных бомб и обхода каталогов<div class="prim">Осмотр без распаковки на диск, формат по байтам, общий бюджет на все уровни. XXE - шаг 26</div></td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
 <tr class="closed"><td class="c mono">23</td><td>Политика шифрованных и повреждённых файлов<div class="prim">Отказ - состояние, а не падение. Приём пароля сделан и выключен до раздела 14.3</div></td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill closed">закрыт</span></td></tr>
-<tr class="open"><td class="c mono">24</td><td>Изолированный запуск обработчиков</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="closed"><td class="c mono">24</td><td>Изолированный запуск обработчиков<div class="prim">Отдельный процесс, задание ОС, запрет сети и лишних прав. Пределы 21 шага теперь принуждаются</div></td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
 <tr class="open"><td class="c mono">25</td><td>Слой адаптеров: единая розетка распознавателей</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
 <tr class="open"><td class="c mono">26</td><td>Адаптер нативных маршрутов DOCX и XLSX</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
 <tr class="open"><td class="c mono">27</td><td>Адаптер структурированных банковских форматов</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
@@ -278,5 +278,5 @@ footer p{margin:0}
 <tr class="open"><td class="c mono">77</td><td>Пилот у внешнего клиента</td><td class="cx">очень сложный</td><td class="c mono">7</td><td><span class="pill open">не начат</span></td></tr>
 </tbody></table></div></details>
 </div></section>
-<footer><p>Источник: <span class="mono">registry/registry.csv</span>, SHA-256 <span class="mono">ED680E8395C2A6F9…</span>. Состояния в реестре: закрыт, не начат. Пересборка: <span class="mono">python pult/build.py</span>.</p></footer>
+<footer><p>Источник: <span class="mono">registry/registry.csv</span>, SHA-256 <span class="mono">0E3AC22645197B75…</span>. Состояния в реестре: закрыт, не начат. Пересборка: <span class="mono">python pult/build.py</span>.</p></footer>
 </div>
