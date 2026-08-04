@@ -87,12 +87,12 @@ footer p{margin:0}
 <div class="wrap">
 <header>
 <h1>Пульт станка PDF→Excel</h1>
-<p class="sub">Состояние взято только из реестра. Собрано 04.08.2026 23:13.</p>
+<p class="sub">Состояние взято только из реестра. Собрано 04.08.2026 23:31.</p>
 </header>
 <section class="card">
-<h2>Ящик отправки — выпуск 052</h2>
-<p class="sub">Файлов 60, отпечаток 97ba5958c54c. Неизменная опись этого
-выпуска: <a href="outbox/vypuski/opis-052.html">outbox/vypuski/opis-052.html</a>
+<h2>Ящик отправки — выпуск 053</h2>
+<p class="sub">Файлов 61, отпечаток 165ce1914c00. Неизменная опись этого
+выпуска: <a href="outbox/vypuski/opis-053.html">outbox/vypuski/opis-053.html</a>
 — по тому адресу список не изменится никогда.</p>
 <ul class="vn">
 <li><a href="outbox/README.md">README.md</a> <span class="of">5888 байт</span></li>
@@ -152,9 +152,10 @@ footer p{margin:0}
 <li><a href="outbox/otchet-shag-61.md">otchet-shag-61.md</a> <span class="of">7186 байт</span></li>
 <li><a href="outbox/otchet-shag-62.md">otchet-shag-62.md</a> <span class="of">7880 байт</span></li>
 <li><a href="outbox/otchet-shag-63.md">otchet-shag-63.md</a> <span class="of">7154 байт</span></li>
+<li><a href="outbox/otchet-shag-64.md">otchet-shag-64.md</a> <span class="of">7146 байт</span></li>
 <li><a href="outbox/spisok-dokumentov-1.md">spisok-dokumentov-1.md</a> <span class="of">4482 байт</span></li>
 <li><a href="outbox/svodka-dlya-vladeltsa.md">svodka-dlya-vladeltsa.md</a> <span class="of">13611 байт</span></li>
-<li><a href="outbox/состояние.md">состояние.md</a> <span class="of">40670 байт</span></li>
+<li><a href="outbox/состояние.md">состояние.md</a> <span class="of">42837 байт</span></li>
 </ul>
 <p class="sub"><a href="outbox/">Опись по общему адресу</a> может прийти
 из кеша несвежей. Эта страница пересобирается при каждом коммите.</p>
@@ -162,8 +163,8 @@ footer p{margin:0}
 <section class="card total">
 <h2>Весь план</h2>
 <div class="grid2">
-<div class="metric"><div class="label">Закрыто шагов</div><div class="big">53 <span class="of">из 77</span></div><div class="bar steps"><span style="width:68.8%"></span></div><div class="barval">68,8%</div></div>
-<div class="metric"><div class="label">Закрыто веса</div><div class="big">161,5 <span class="of">из 239,5</span></div><div class="bar weight"><span style="width:67.4%"></span></div><div class="barval">67,4%</div></div>
+<div class="metric"><div class="label">Закрыто шагов</div><div class="big">54 <span class="of">из 77</span></div><div class="bar steps"><span style="width:70.1%"></span></div><div class="barval">70,1%</div></div>
+<div class="metric"><div class="label">Закрыто веса</div><div class="big">165,5 <span class="of">из 239,5</span></div><div class="bar weight"><span style="width:69.1%"></span></div><div class="barval">69,1%</div></div>
 </div></section>
 <section class="card outside">
 <h2>Вне нумерации</h2>
@@ -333,17 +334,17 @@ footer p{margin:0}
 <details class="phase" open>
 <summary>
 <span class="pname">Фаза 6</span>
-<span class="pcount">2/8 шагов · 6/21 веса</span>
+<span class="pcount">3/8 шагов · 10/21 веса</span>
 </summary>
 <div class="pbody">
 <div class="grid2">
-<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:25.0%"></span></div><div class="barval">25%</div></div>
-<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:28.6%"></span></div><div class="barval">28,6%</div></div>
+<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:37.5%"></span></div><div class="barval">37,5%</div></div>
+<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:47.6%"></span></div><div class="barval">47,6%</div></div>
 </div>
 <table><thead><tr><th class="c">№</th><th>Шаг</th><th>Сложность</th><th class="c">Вес</th><th>Состояние</th></tr></thead><tbody>
 <tr class="closed"><td class="c mono">62</td><td>Идемпотентный повтор запуска<div class="prim">Судья одинаковости - отпечаток байтов документа и версии оснастки, политики и кода, а не имя файла. Повтор не задваивает: отметка кончен у ключа ровно одна, но сам повтор не теряется - ложится отдельным событием. После обрыва запуск виден сорванным (начат есть, кончен нет), и повтор проходит работу заново, приходя к тому же отпечатку итога. Расхождение объявляется, а не замалчивается. Проверено на настоящей выписке с обрывами в трёх местах: 3318 записей, отпечаток совпал с непрерывным прогоном, сорванных не осталось</div></td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
 <tr class="closed"><td class="c mono">63</td><td>Наблюдаемость этапов<div class="prim">По каждому этапу видно объём, время, версии, код результата и причину. Содержимое документа наружу не выходит по устройству: перечень наблюдаемого закрыт, числа числами, строки только вида кода или версии, строка без единой буквы отвергается как данные, отпечаток обязан быть шестнадцатеричным. Свободный текст этапа наружу не берётся вовсе. На настоящей выписке 24 этапа, кусков документа в наблюдениях ноль. Здесь же закрыт открытый вопрос шага 58: журнал режется на части по объявленному пределу, новая часть начинается переносом с прежней вершиной, стыки проверяются, разрыв обнаруживается. Удаление не делается - срок хранения решает владелец</div></td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill closed">закрыт</span></td></tr>
-<tr class="open"><td class="c mono">64</td><td>Восстановление после частичного сбоя</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="closed"><td class="c mono">64</td><td>Восстановление после частичного сбоя<div class="prim">Испытание, а не описание. Порчено пять состояний: оборванный журнал, вырезанная запись, битая часть после нарезки, недописанный итог, нехватка прав и места - все названы кодом и словами, ничего не чинится молча. Итог пишется сторонним файлом и переносится одним движением: под настоящим именем половины не бывает. Главная находка испытания - документ с вырезанной серединой (107 страниц из 218) шёл без единого видимого возражения, хотя правила итогов внутри говорили, что документ не сходится сам с собой: этап объявлял успех потому, что правила посчитаны, а не пройдены. Исправлено открыто, проверки поставлены</div></td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
 <tr class="open"><td class="c mono">65</td><td>Испытание автономности</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
 <tr class="open"><td class="c mono">66</td><td>Обнаружение дрейфа</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
 <tr class="open"><td class="c mono">67</td><td>Вторая и третья оснастки</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
@@ -371,5 +372,5 @@ footer p{margin:0}
 <tr class="open"><td class="c mono">77</td><td>Пилот у внешнего клиента</td><td class="cx">очень сложный</td><td class="c mono">7</td><td><span class="pill open">не начат</span></td></tr>
 </tbody></table></div></details>
 </div></section>
-<footer><p>Источник: <span class="mono">registry/registry.csv</span>, SHA-256 <span class="mono">F1FBB9BD0FDEC5EC…</span>. Состояния в реестре: закрыт, идёт, не начат. Пересборка: <span class="mono">python pult/build.py</span>.</p></footer>
+<footer><p>Источник: <span class="mono">registry/registry.csv</span>, SHA-256 <span class="mono">49DE412C320391EC…</span>. Состояния в реестре: закрыт, идёт, не начат. Пересборка: <span class="mono">python pult/build.py</span>.</p></footer>
 </div>
