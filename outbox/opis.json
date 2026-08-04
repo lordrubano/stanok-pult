@@ -1,11 +1,16 @@
 {
  "версия": "outbox-manifest/1",
- "отпечаток": "6719e91aa4ab",
+ "отпечаток": "7dde0991ca4d",
  "файлы": [
   {
    "имя": "README.md",
    "байт": 5888,
    "sha256": "2b5ececc629616442c6ef6ddc7dfacbf806d4525705efae2ade30631a4668b41"
+  },
+  {
+   "имя": "instrukciya-razmetki-1.md",
+   "байт": 10818,
+   "sha256": "12acba1cf48e6b03b6135ee5f47e9d0cb0b66534fe9600b6e2672693ac14f9bd"
   },
   {
    "имя": "otchet-VN-1.md",
@@ -203,14 +208,19 @@
    "sha256": "25fc9968f32bb386a8ed336cadb1eddc64c76805ea2c217598983c8c3d052cd1"
   },
   {
+   "имя": "otchet-shag-48.md",
+   "байт": 10254,
+   "sha256": "88b04cffedb958bda7f5334f5c709e3b794622c3457c6ca42f7c96fcdb2a4afc"
+  },
+  {
    "имя": "spisok-dokumentov-1.md",
    "байт": 4482,
    "sha256": "fbb4e905a572e988085dccd25b687744f72555117a3221abed929e1d09119abc"
   },
   {
    "имя": "состояние.md",
-   "байт": 19717,
-   "sha256": "30e911acc28bf51f17a15c91e461b69af26cb99b2187dfd548278bf35e643c69"
+   "байт": 20861,
+   "sha256": "7be4502b886eb3b60cf255ecd1691d6f3f3b497cae6aea1823041eb4eaf1acff"
   }
  ]
 }
