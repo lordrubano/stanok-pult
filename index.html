@@ -3,24 +3,24 @@
 :root{
   --bg:#f6f7f9; --card:#fff; --ink:#16181d; --dim:#6b7280; --line:#e3e6ea;
   --closed:#1a7f4b; --closedbg:#e6f4ec; --open:#8a8f98; --openbg:#eef0f3;
-  --steps:#2f6fd0; --weight:#7a5af0; --track:#e7eaee;
+  --steps:#2f6fd0; --weight:#7a5af0; --vn:#b26a00; --track:#e7eaee;
 }
 @media (prefers-color-scheme: dark){
   :root{
     --bg:#0f1115; --card:#171a20; --ink:#e8eaed; --dim:#9aa1ab; --line:#262a32;
     --closed:#4ade80; --closedbg:#12301f; --open:#8a919c; --openbg:#20242b;
-    --steps:#6aa3f5; --weight:#a78bfa; --track:#252932;
+    --steps:#6aa3f5; --weight:#a78bfa; --vn:#f0b429; --track:#252932;
   }
 }
 :root[data-theme="dark"]{
   --bg:#0f1115; --card:#171a20; --ink:#e8eaed; --dim:#9aa1ab; --line:#262a32;
   --closed:#4ade80; --closedbg:#12301f; --open:#8a919c; --openbg:#20242b;
-  --steps:#6aa3f5; --weight:#a78bfa; --track:#252932;
+  --steps:#6aa3f5; --weight:#a78bfa; --vn:#f0b429; --track:#252932;
 }
 :root[data-theme="light"]{
   --bg:#f6f7f9; --card:#fff; --ink:#16181d; --dim:#6b7280; --line:#e3e6ea;
   --closed:#1a7f4b; --closedbg:#e6f4ec; --open:#8a8f98; --openbg:#eef0f3;
-  --steps:#2f6fd0; --weight:#7a5af0; --track:#e7eaee;
+  --steps:#2f6fd0; --weight:#7a5af0; --vn:#b26a00; --track:#e7eaee;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
@@ -43,6 +43,8 @@ h1{font-size:24px;margin:0 0 4px;letter-spacing:-.01em}
 .bar span{display:block;height:100%;border-radius:99px}
 .bar.steps span{background:var(--steps)}
 .bar.weight span{background:var(--weight)}
+.bar.vn span{background:var(--vn)}
+.going{color:var(--vn);font-weight:600}
 .barval{font-size:12px;color:var(--dim);margin-top:5px}
 .note{font-size:12px;color:var(--dim);margin:-8px 0 12px}
 ul.vn{list-style:none;margin:0;padding:0}
@@ -85,7 +87,7 @@ footer p{margin:0}
 <div class="wrap">
 <header>
 <h1>Пульт станка PDF→Excel</h1>
-<p class="sub">Состояние взято только из реестра. Собрано 04.08.2026 12:58.</p>
+<p class="sub">Состояние взято только из реестра. Собрано 04.08.2026 12:59.</p>
 </header>
 <section class="card">
 <h2>Ящик отправки — выпуск 033</h2>
@@ -145,20 +147,24 @@ footer p{margin:0}
 </div></section>
 <section class="card outside">
 <h2>Вне нумерации</h2>
-<p class="note">В проценты плана не входят.</p>
-<ul class="vn">
-<li><span class="dot closed"></span><span class="vnid">VN-1</span><span class="vnname">Канал обмена CF_EXCHANGE открыт и проверен</span><span class="pill closed">закрыт</span></li>
-<li><span class="dot closed"></span><span class="vnid">VN-2</span><span class="vnname">Макет пульта показан владельцу</span><span class="pill closed">закрыт</span></li>
-<li><span class="dot closed"></span><span class="vnid">VN-3</span><span class="vnname">Публикация пульта для удалённого наблюдения коллегами</span><span class="pill closed">закрыт</span></li>
-<li><span class="dot closed"></span><span class="vnid">VN-4</span><span class="vnname">Глобальная проверка объёма и качества перед Фазой 4</span><span class="pill closed">закрыт</span></li>
-<li><span class="dot closed"></span><span class="vnid">VN-5</span><span class="vnname">Сквозной конвейер и правки по глобальной проверке</span><span class="pill closed">закрыт</span></li>
-<li><span class="dot closed"></span><span class="vnid">VN-6</span><span class="vnname">Сборка строк и колонок настоящего документа</span><span class="pill closed">закрыт</span></li>
-<li><span class="dot closed"></span><span class="vnid">VN-7</span><span class="vnname">Шапка таблицы и границы проводки</span><span class="pill closed">закрыт</span></li>
-<li><span class="dot closed"></span><span class="vnid">VN-8</span><span class="vnname">Оснастка первого семейства</span><span class="pill closed">закрыт</span></li>
-<li><span class="dot closed"></span><span class="vnid">VN-9</span><span class="vnname">Устойчивость разбора на частях документа и список нужных документов</span><span class="pill closed">закрыт</span></li>
-<li><span class="dot closed"></span><span class="vnid">VN-10</span><span class="vnname">Происхождение значения FieldEvidence</span><span class="pill closed">закрыт</span></li>
-<li><span class="dot closed"></span><span class="vnid">VN-11</span><span class="vnname">Вторая выписка того же банка и предупреждения о значении</span><span class="pill closed">закрыт</span></li>
-</ul></section>
+<div class="grid2">
+<div class="metric"><div class="label">Закрыто работ</div><div class="big">12 <span class="of">из 12</span></div><div class="bar vn"><span style="width:100.0%"></span></div><div class="barval">100%</div></div>
+<div class="metric"><div class="label">В работе</div><div class="big">0</div><div class="prim">Работы, которых нет в плане из 77 шагов: канал обмена, проверки сделанного, разбор настоящего документа. <b>В проценты плана не входят и входить не должны</b> — план мерится своими шагами. Но труд здесь настоящий, и потому он показан.</div></div>
+</div>
+<table><thead><tr><th class="c">№</th><th>Работа</th><th>Состояние</th></tr></thead><tbody>
+<tr class="closed"><td class="c mono">VN-1</td><td>Канал обмена CF_EXCHANGE открыт и проверен<div class="prim">вне нумерации</div></td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">VN-2</td><td>Макет пульта показан владельцу<div class="prim">вне нумерации</div></td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">VN-3</td><td>Публикация пульта для удалённого наблюдения коллегами<div class="prim">вне нумерации, опубликован после закрытия Фазы 1</div></td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">VN-4</td><td>Глобальная проверка объёма и качества перед Фазой 4<div class="prim">вне нумерации. Найдено 10 расхождений с чертежом, 80 немых проверок из 524, 4 слагаемых допуска из 11 с настоящим наблюдателем</div></td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">VN-5</td><td>Сквозной конвейер и правки по глобальной проверке<div class="prim">вне нумерации. Закрыты дефекты 1 и 6, собран конвейер приём-решение, приведены к правде описи 3,4,5,9, усилены 14 проверок вхолостую</div></td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">VN-6</td><td>Сборка строк и колонок настоящего документа<div class="prim">вне нумерации. Учтён поворот страниц, дата первой ячейкой в 99,7% строк, строк с многими датами нет, порог склейки измерен по впадине и объявлен подгонкой</div></td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">VN-7</td><td>Шапка таблицы и границы проводки<div class="prim">вне нумерации. Восемь колонок с устойчивым положением на 218 страницах, правило границы измерено и объявлено оснасткой, собрано 3318 записей, учёт сходится</div></td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">VN-8</td><td>Оснастка первого семейства<div class="prim">вне нумерации. 3318 записей разобраны по полям без единого неистолкованного, баланс сошёлся, обороты по дебету и кредиту сошлись, все записи в review из-за шести неизвестных слагаемых</div></td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">VN-9</td><td>Устойчивость разбора на частях документа и список нужных документов<div class="prim">вне нумерации. Разрезка на 10 частей и постранично дала те же 3318 записей. На документе целиком держится только баланс. Названо, какие слагаемые допуска закрываются без новых документов</div></td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">VN-10</td><td>Происхождение значения FieldEvidence<div class="prim">вне нумерации. Собирается по разделу 6.1, 26544 поля прослеживаются до места на странице. Закрыты два слагаемых допуска из шести. Осталось четыре</div></td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">VN-11</td><td>Вторая выписка того же банка и предупреждения о значении<div class="prim">вне нумерации. Оснастка не менялась. Форма узналась, 827 записей, полей неистолкованных ноль, полосы колонок совпали до знака, баланс сошёлся. Слагаемое предупреждений закрыто</div></td><td><span class="pill closed">закрыт</span></td></tr>
+<tr class="closed"><td class="c mono">VN-12</td><td>Работы вне нумерации видны на пульте<div class="prim">вне нумерации. Своя линия со счётчиком, таблицей и состояниями. У фазы с идущей работой видно N в работе. Правило о процентах не менялось</div></td><td><span class="pill closed">закрыт</span></td></tr>
+</tbody></table></section>
 <section class="card">
 <h2>Фазы</h2>
 <div class="phases">
@@ -255,10 +261,10 @@ footer p{margin:0}
 <tr class="closed"><td class="c mono">44</td><td>Три режима перепроверки с переходами по метрикам<div class="prim">Переход открывает измеренная метрика, а не человек и не счётчик документов. Случайная доля обязательна и триггерами не съедается</div></td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
 <tr class="closed"><td class="c mono">45</td><td>Движок политик: единственное место рождения статуса<div class="prim">Формула 10.1 целиком, неизвестность равна невыполнению, причина называет слагаемое. Фаза 3 закрыта</div></td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
 </tbody></table></div></details>
-<details class="phase">
+<details class="phase" open>
 <summary>
 <span class="pname">Фаза 4</span>
-<span class="pcount">0/9 шагов · 0/31 веса</span>
+<span class="pcount">0/9 шагов · 0/31 веса · <span class="going">1 в работе</span></span>
 </summary>
 <div class="pbody">
 <div class="grid2">
@@ -336,5 +342,5 @@ footer p{margin:0}
 <tr class="open"><td class="c mono">77</td><td>Пилот у внешнего клиента</td><td class="cx">очень сложный</td><td class="c mono">7</td><td><span class="pill open">не начат</span></td></tr>
 </tbody></table></div></details>
 </div></section>
-<footer><p>Источник: <span class="mono">registry/registry.csv</span>, SHA-256 <span class="mono">867FE2F144991CFA…</span>. Состояния в реестре: закрыт, идёт, не начат. Пересборка: <span class="mono">python pult/build.py</span>.</p></footer>
+<footer><p>Источник: <span class="mono">registry/registry.csv</span>, SHA-256 <span class="mono">3F9B50B1DD1899D9…</span>. Состояния в реестре: закрыт, идёт, не начат. Пересборка: <span class="mono">python pult/build.py</span>.</p></footer>
 </div>
