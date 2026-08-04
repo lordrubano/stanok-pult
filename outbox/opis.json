@@ -1,6 +1,6 @@
 {
  "версия": "outbox-manifest/1",
- "отпечаток": "7dde0991ca4d",
+ "отпечаток": "c3caa0ac9196",
  "файлы": [
   {
    "имя": "README.md",
@@ -213,14 +213,19 @@
    "sha256": "88b04cffedb958bda7f5334f5c709e3b794622c3457c6ca42f7c96fcdb2a4afc"
   },
   {
+   "имя": "otchet-shag-50.md",
+   "байт": 9939,
+   "sha256": "9d3c485faa577c1d8a4332b85cc3b5c7dfcc33792568d2979375b8002e57738a"
+  },
+  {
    "имя": "spisok-dokumentov-1.md",
    "байт": 4482,
    "sha256": "fbb4e905a572e988085dccd25b687744f72555117a3221abed929e1d09119abc"
   },
   {
    "имя": "состояние.md",
-   "байт": 20861,
-   "sha256": "7be4502b886eb3b60cf255ecd1691d6f3f3b497cae6aea1823041eb4eaf1acff"
+   "байт": 21735,
+   "sha256": "68dd83a8c9b03863958911ee497d66db9b300c142527c7f8cbd4bf11c4ddce1e"
   }
  ]
 }
