@@ -1,6 +1,6 @@
 {
  "версия": "outbox-manifest/1",
- "отпечаток": "a5cfa1ad429e",
+ "отпечаток": "430e1b828658",
  "файлы": [
   {
    "имя": "README.md",
@@ -416,6 +416,11 @@
    "имя": "pokaz-ekranov-2.html",
    "байт": 20333,
    "sha256": "29c7f9d8638d052b805ddb0970abb673f946c2962c59511911425aadf3763888"
+  },
+  {
+   "имя": "pokaz-ekranov-3.html",
+   "байт": 29182,
+   "sha256": "d94aa57f5e56d43e2ca1c5035675b5cf434562fa68edcdd5cb98771f52cbe4d9"
   },
   {
    "имя": "pokaz-ekranov.html",

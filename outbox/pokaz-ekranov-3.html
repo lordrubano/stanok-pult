@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Экраны станка — учебный показ</title>
+<style>
+:root { color-scheme: light dark; }
+body { font: 15px/1.5 system-ui, sans-serif; margin: 0; padding: 24px;
+       max-width: 1100px; }
+h1 { font-size: 20px; margin: 0 0 4px; }
+.tih { opacity: .65; font-size: 13px; }
+table { border-collapse: collapse; width: 100%; margin-top: 16px; }
+th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #8884; }
+th { font-weight: 600; font-size: 13px; opacity: .75; }
+code { font-family: ui-monospace, monospace; font-size: 13px; }
+</style>
+</head><body>
+<meta name="robots" content="noindex, nofollow"><meta name="referrer" content="no-referrer"><style>
+* { box-sizing: border-box; }
+body { font: 15px/1.45 -apple-system, "Segoe UI", system-ui, sans-serif;
+       margin: 0; background: #f2f6fb; color: #16233a; }
+.shapka { background: #14283f; color: #fff; padding: 18px 40px;
+          display: flex; justify-content: space-between; align-items: center;
+          flex-wrap: wrap; gap: 10px; }
+.shapka .imya { font-size: 21px; font-weight: 700; letter-spacing: .01em; }
+.shapka .sprava { font-size: 14px; color: #b9c4d4; }
+.ekran { padding: 26px 40px 40px; }
+.ekran + .ekran { border-top: 1px solid #dde3ec; }
+h1.zag { font-size: 30px; font-weight: 700; margin: 0 0 4px; }
+p.pod { color: #5b6b85; margin: 0 0 22px; font-size: 16px; }
+.plitki { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px;
+          margin-bottom: 22px; }
+.plitka { border-radius: 10px; padding: 14px 16px; border: 1px solid #0000000f; }
+.plitka .p { font-size: 12px; font-weight: 700; letter-spacing: .06em;
+             text-transform: uppercase; margin-bottom: 6px; }
+.plitka .n { font-size: 28px; font-weight: 700; line-height: 1; }
+.pl-seraya { background: #eef2f7; } .pl-seraya .p { color: #5b6b85; }
+.pl-zheltaya { background: #fdf3d3; } .pl-zheltaya .p { color: #8a6b12; }
+.pl-sinyaya { background: #e7eefc; } .pl-sinyaya .p { color: #2b5ce6; }
+.pl-zelenaya { background: #e6f4ea; } .pl-zelenaya .p { color: #1e8e3e; }
+.pl-krasnaya { background: #fdeaea; } .pl-krasnaya .p { color: #c5221f; }
+.dvekol { display: grid; grid-template-columns: minmax(0,1.85fr) minmax(0,1fr);
+          gap: 20px; align-items: start; }
+.trikol { display: grid; grid-template-columns: repeat(3, minmax(0,1fr));
+          gap: 20px; align-items: start; }
+.karta { background: #fff; border: 1px solid #dde3ec; border-radius: 12px;
+         padding: 22px 24px; }
+.mnk { font-size: 12.5px; font-weight: 700; letter-spacing: .07em;
+       text-transform: uppercase; color: #2b5ce6; margin-bottom: 14px; }
+.deystvie { font-size: 25px; font-weight: 700; margin: 0 0 6px; }
+.deystvie-pod { color: #5b6b85; margin: 0 0 18px; }
+.vrezka { background: #fffbe8; border: 1px solid #e8b93a; border-radius: 9px;
+          padding: 14px 16px; margin-bottom: 20px; }
+.vrezka b { color: #8a6b12; display: block; margin-bottom: 4px; }
+.vrezka span { color: #5b4a12; font-size: 14px; }
+table.svoystva { border-collapse: collapse; margin-bottom: 22px; }
+table.svoystva th { text-align: left; font-weight: 700; color: #16233a;
+                    padding: 6px 34px 6px 0; vertical-align: top;
+                    white-space: nowrap; }
+table.svoystva td { padding: 6px 0; color: #33445e; }
+.knopki { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.sinyaya { background: #2b5ce6; color: #fff; border-radius: 8px;
+           padding: 14px 30px; font-weight: 700; font-size: 14.5px;
+           letter-spacing: .04em; text-transform: uppercase; }
+.belaya { border: 1px solid #c8d0dc; border-radius: 8px; padding: 14px 26px;
+          font-weight: 600; font-size: 14.5px; letter-spacing: .04em;
+          text-transform: uppercase; background: #fff; }
+.ssylka { color: #2b5ce6; font-weight: 600; font-size: 14.5px; }
+.pogashena { background: #e3e8ef; color: #8593a8; border-radius: 8px;
+             padding: 14px 26px; font-weight: 700; text-align: center;
+             text-transform: uppercase; letter-spacing: .04em; }
+.ind { border-bottom: 1px solid #eef1f6; padding: 12px 0; }
+.ind:last-child { border-bottom: 0; }
+.ind .im { font-weight: 700; }
+.ind .zn { color: #5b6b85; font-size: 14px; }
+.tochka { display: inline-block; width: 9px; height: 9px; border-radius: 50%;
+          margin-right: 9px; vertical-align: 1px; }
+.t-zel { background: #1e8e3e; } .t-zhel { background: #d99a0b; }
+.t-ser { background: #9aa4b2; } .t-kras { background: #c5221f; }
+.list { background: #fafbfd; border: 1px solid #dde3ec; border-radius: 10px;
+        padding: 16px 18px; overflow-x: auto; }
+.list .titul { font-size: 19px; font-weight: 700; margin-bottom: 12px; }
+table.dok { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+table.dok th { text-align: left; font-weight: 700; padding: 8px 10px 8px 0;
+               border-bottom: 1px solid #dde3ec; white-space: nowrap; }
+table.dok td { padding: 8px 10px 8px 0; border-bottom: 1px solid #eef1f6;
+               color: #33445e; white-space: nowrap; }
+table.dok tr.spor td { background: #fff8e1; font-weight: 600; }
+table.dok td.mesto { color: #8a6b12; font-weight: 700; }
+.snoska { color: #8a6b12; font-weight: 700; font-size: 13.5px;
+          margin-top: 14px; }
+.sopost { border: 1px solid #dde3ec; border-radius: 9px; padding: 13px 15px;
+          margin-bottom: 12px; background: #fbfcfe; }
+.sopost .para { display: flex; gap: 10px; align-items: baseline;
+                font-size: 15px; flex-wrap: wrap; }
+.sopost .para b { min-width: 128px; }
+.sopost .para .str { color: #8593a8; }
+.sopost .sost { font-size: 13.5px; margin-top: 6px; }
+.sost-zel { color: #1e8e3e; } .sost-zhel { color: #8a6b12; font-weight: 700; }
+.plashka { border: 1px solid #e8b93a; background: #fffbe8; color: #8a6b12;
+           border-radius: 9px; padding: 13px; text-align: center;
+           font-weight: 700; }
+table.excel { border-collapse: collapse; width: 100%; font-size: 13.5px;
+              border: 1px solid #dde3ec; }
+table.excel th { background: #eef2f7; text-align: left; font-weight: 700;
+                 padding: 9px 11px; border: 1px solid #dde3ec; }
+table.excel td { padding: 9px 11px; border: 1px solid #eef1f6;
+                 color: #33445e; }
+.urovni { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.urovni label { border: 1px solid #c8d0dc; background: #fff; border-radius: 20px;
+                padding: 6px 15px; font-size: 13.5px; cursor: pointer; }
+.perekl { position: absolute; opacity: 0; pointer-events: none; }
+.vid { display: none; }
+#v0:checked ~ .trikol .vid0, #v1:checked ~ .trikol .vid1,
+#v2:checked ~ .trikol .vid2, #v3:checked ~ .trikol .vid3,
+#v4:checked ~ .trikol .vid4 { display: block; }
+#v0:checked ~ .urovni label[for=v0], #v1:checked ~ .urovni label[for=v1],
+#v2:checked ~ .urovni label[for=v2], #v3:checked ~ .urovni label[for=v3],
+#v4:checked ~ .urovni label[for=v4] { background: #2b5ce6; color: #fff;
+                                      border-color: #2b5ce6; }
+.prichina { background: #fffbe8; border-left: 4px solid #e8b93a;
+            border-radius: 0 8px 8px 0; padding: 14px 16px; margin: 16px 0; }
+.prichina b { display: block; color: #8a6b12; margin-bottom: 4px; }
+.uchebnoe { background: #c5221f; color: #fff; padding: 12px 40px;
+            font-weight: 700; font-size: 14px; }
+ul.zapiska { margin: 0; padding: 18px 40px 4px 62px; font-size: 15px;
+             color: #33445e; }
+ul.zapiska li { margin: 4px 0; }
+.hvost { color: #8593a8; font-size: 13.5px; padding: 0 40px 34px; }
+@media (max-width: 1080px) {
+  .plitki { grid-template-columns: repeat(3, 1fr); }
+  .dvekol, .trikol { grid-template-columns: 1fr; }
+  .shapka, .ekran, ul.zapiska, .uchebnoe, .hvost { padding-left: 20px;
+                                                   padding-right: 20px; }
+}
+</style><div class="shapka"><div class="imya">СТАНОК PDF → EXCEL</div><div class="sprava">Учебный показ  •  документ вымышлен</div></div><div class="uchebnoe">УЧЕБНЫЙ ОБРАЗЕЦ — суммы, названия и назначения вымышлены. Настоящее здесь одно: сколько работы достаётся человеку.</div><ul class="zapiska"><li>Так выглядит рабочее место оператора: станок переводит выписки из PDF в Excel и спрашивает человека там, где сомневается.</li><li>Документ выдуман, а работы столько же, сколько на настоящем: 840 операций, 231 с сомнением.</li><li>Главное — второй экран: 213 одинаковых сомнений решаются одним нажатием.</li><li>Кнопки не работают, это вид. Но пять кнопок на третьем экране переключают вид документа — нажмите.</li><li>Скажите, что непонятно и чего не хватает: ответьте тому, кто прислал ссылку.</li></ul><div class="ekran"><h1 class="zag">Рабочий экран оператора</h1><p class="pod">Главный вопрос: что нужно сделать сейчас?</p><div class="plitki"><div class="plitka pl-seraya"><div class="p">новые</div><div class="n">0</div></div><div class="plitka pl-zheltaya"><div class="p">согласовать шаблон</div><div class="n">0</div></div><div class="plitka pl-sinyaya"><div class="p">обрабатываются</div><div class="n">0</div></div><div class="plitka pl-zheltaya"><div class="p">проверить</div><div class="n">840 строк</div></div><div class="plitka pl-zelenaya"><div class="p">готово</div><div class="n">0</div></div><div class="plitka pl-krasnaya"><div class="p">заблокировано</div><div class="n">0</div></div></div><div class="dvekol"><div class="karta"><div class="mnk">Следующее действие</div><div class="deystvie">Разобрать группу «двоякая дата» — 213 записей</div><div class="deystvie-pod">из 840 записей на проверке 213 отличаются только числами: это одно решение, а не 213</div><div class="vrezka"><b>⚠ Требуется решение оператора</b><span>Записи с сомнением не уходят в Excel сами: станок ждёт человека.</span></div><table class="svoystva"><tr><th>Документ</th><td>1 PDF  •  840 операций</td></tr><tr><th>Шаблон</th><td>учебное-1, версия учебное-1/1</td></tr><tr><th>На проверке</th><td>231 записей  •  3 группы сомнений</td></tr><tr><th>Крупнейшая группа</th><td>двоякая дата — 213 записей</td></tr></table><div class="knopki"><span class="sinyaya">Разобрать группу</span><span class="belaya">Открыть по одной</span><span class="ssylka">Подробнее ›</span></div></div><div class="karta"><div class="mnk">Индикаторы документа</div><div class="ind"><div class="im"><span class="tochka t-zel"></span>Вход учтён</div><div class="zn">1 из 1 PDF</div></div><div class="ind"><div class="im"><span class="tochka t-zel"></span>Страницы</div><div class="zn">53 определено</div></div><div class="ind"><div class="im"><span class="tochka t-zel"></span>Форма узнана</div><div class="zn">учебное-1</div></div><div class="ind"><div class="im"><span class="tochka t-zhel"></span>На проверке</div><div class="zn">231 записей ждут человека</div></div><div class="ind"><div class="im"><span class="tochka t-ser"></span>Покрытие</div><div class="zn">ещё не измерено</div></div><div class="ind"><div class="im"><span class="tochka t-ser"></span>Итоговый Excel</div><div class="zn">не формировался</div></div></div></div></div><div class="ekran"><h1 class="zag">Однородные сомнения решаются один раз</h1><p class="pod">Ввод числа защищает от случайного нажатия, но однородности не доказывает. Доказывает — вот это.</p><div class="dvekol"><div class="karta"><div class="mnk">Следующее действие</div><div class="deystvie">Решить 213 записей одним нажатием</div><div class="deystvie-pod">одинаковый род сомнения: двоякая дата; поля: дата. Первичные значения не меняются: решение ложится отдельным слоем.</div><div class="vrezka"><b>⚠ Число записей называет оператор</b><span>Не сошлось — отказ: группа могла измениться с тех пор, как вы на неё смотрели. Решение отменяемо.</span></div><div class="mnk">Примеры из группы</div><table class="dok"><tr><th>Откуда</th><th>В документе</th><th>Станок прочёл</th><th>Место</th></tr><tr><td>из начала</td><td class="mesto">02.01.2024</td><td>2024-01-02</td><td>страница 1, строка страница[1]/строка[0]</td></tr><tr><td>из середины</td><td class="mesto">08.10.2024</td><td>2024-10-08</td><td>страница 20, строка страница[20]/строка[14]</td></tr><tr><td>из конца</td><td class="mesto">04.08.2024</td><td>2024-08-04</td><td>страница 40, строка страница[40]/строка[12]</td></tr></table><div class="knopki" style="margin-top:22px"><span class="sinyaya">Применить решение к 213 записям этой группы</span><span class="belaya">Отмена</span></div></div><div class="karta"><div class="mnk">Что показано до применения</div><div class="ind"><div class="im"><span class="tochka t-zel"></span>Правило группировки</div><div class="zn">одинаковый род сомнения: двоякая дата; поля: дата</div></div><div class="ind"><div class="im"><span class="tochka t-zel"></span>Шаблон и версия</div><div class="zn">учебное-1, учебное-1/1</div></div><div class="ind"><div class="im"><span class="tochka t-zel"></span>Затронуто</div><div class="zn">1 документ, 213 записей</div></div><div class="ind"><div class="im"><span class="tochka t-zel"></span>Примеры</div><div class="zn">из начала, середины и конца группы</div></div><div class="ind"><div class="im"><span class="tochka t-zhel"></span>Критические поля</div><div class="zn">дата (дата), сумма (деньги)</div></div><div class="ind"><div class="im"><span class="tochka t-zel"></span>Что изменится</div><div class="zn">все 213 записей группы получат одно и то же решение и одно основание; первичные значения не меняются, решение ложится отдельным слоем</div></div></div></div></div><div class="ekran"><h1 class="zag">Спорная запись и место, откуда она взята</h1><p class="pod">Значение может быть прочитано верно, а относиться к соседней строке. Поэтому вид раздвигается — нажмите.</p><input type="radio" name="uroven" id="v0" class="perekl"><input type="radio" name="uroven" id="v1" class="perekl"><input type="radio" name="uroven" id="v2" class="perekl" checked><input type="radio" name="uroven" id="v3" class="perekl"><input type="radio" name="uroven" id="v4" class="perekl"><div class="urovni"><label for="v0">поле</label><label for="v1">строка</label><label for="v2">соседние строки</label><label for="v3">таблица</label><label for="v4">страница</label></div><div class="trikol"><div class="karta"><div class="mnk">1. Место в документе</div><div class="vid vid0"><div class="list"><div class="titul">страница 1, строка страница[1]/строка[3]</div><table class="dok"><tr class="spor"><td>03.01.2024</td></tr></table></div><div class="snoska">Видно: только само значение<br>Не видно: не видно, к той ли строке оно относится — раздвиньте до строки</div></div><div class="vid vid1"><div class="list"><div class="titul">страница 1, строка страница[1]/строка[3]</div><table class="dok"><tr class="spor"><td>03.01.2024</td><td>4</td><td>1 411,21</td><td>ИП ОБРАЗЦОВ О. О.</td></tr></table></div><div class="snoska">Видно: вся строка записи<br>Не видно: не видно соседних строк — не проверить, не съехала ли граница операции</div></div><div class="vid vid2"><div class="list"><div class="titul">страница 1, строка страница[1]/строка[3]</div><table class="dok"><tr><td>14.01.2024 3 1 274,14 ЗАО &quot;ПРИМЕРНОЕ&quot; услуги по учебному соглашению № 3 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr class="spor"><td>03.01.2024</td><td>4</td><td>1 411,21</td><td>ИП ОБРАЗЦОВ О. О.</td></tr><tr><td>15.01.2024 5 1 548,28 ООО &quot;УЧЕБНАЯ ПОСТАВКА&quot; возврат по учебному договору № 5 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr></table></div><div class="snoska">Видно: строка записи и её соседи сверху и снизу<br>Не видно: не видно таблицы целиком — не проверить, та ли это колонка</div></div><div class="vid vid3"><div class="list"><div class="titul">страница 1, строка страница[1]/строка[3]</div><table class="dok"><tr class="spor"><td>02.01.2024 1 1 000,00 ООО &quot;ОБРАЗЕЦ-ОДИН&quot; оплата по учебному счёту № 1 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>13.01.2024 2 1 137,07 ООО &quot;ОБРАЗЕЦ-ДВА&quot; возврат по учебному договору № 2 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>14.01.2024 3 1 274,14 ЗАО &quot;ПРИМЕРНОЕ&quot; услуги по учебному соглашению № 3 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>03.01.2024 4 1 411,21 ИП ОБРАЗЦОВ О. О. оплата по учебному счёту № 4 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>15.01.2024 5 1 548,28 ООО &quot;УЧЕБНАЯ ПОСТАВКА&quot; возврат по учебному договору № 5 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>16.01.2024 6 1 685,35 ООО &quot;ПРИМЕР-СЕРВИС&quot; услуги по учебному соглашению № 6 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>04.01.2024 7 1 822,42 ООО &quot;ОБРАЗЕЦ-ОДИН&quot; оплата по учебному счёту № 7 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>17.01.2024 8 1 959,49 ООО &quot;ОБРАЗЕЦ-ДВА&quot; возврат по учебному договору № 8 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>18.01.2024 9 2 096,56 ЗАО &quot;ПРИМЕРНОЕ&quot; услуги по учебному соглашению № 9 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>05.01.2024 10 2 233,63 ИП ОБРАЗЦОВ О. О. оплата по учебному счёту № 10 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>19.01.2024 11 2 370,70 ООО &quot;УЧЕБНАЯ ПОСТАВКА&quot; возврат по учебному договору № 11 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>20.01.2024 12 2 507,77 ООО &quot;ПРИМЕР-СЕРВИС&quot; услуги по учебному соглашению № 12 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr></table></div><div class="snoska">Видно: 12 строк вокруг записи<br>Не видно: не видно верха страницы — не проверить заголовки колонок</div></div><div class="vid vid4"><div class="list"><div class="titul">страница 1, строка страница[1]/строка[3]</div><table class="dok"><tr class="spor"><td>02.01.2024 1 1 000,00 ООО &quot;ОБРАЗЕЦ-ОДИН&quot; оплата по учебному счёту № 1 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>13.01.2024 2 1 137,07 ООО &quot;ОБРАЗЕЦ-ДВА&quot; возврат по учебному договору № 2 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>14.01.2024 3 1 274,14 ЗАО &quot;ПРИМЕРНОЕ&quot; услуги по учебному соглашению № 3 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>03.01.2024 4 1 411,21 ИП ОБРАЗЦОВ О. О. оплата по учебному счёту № 4 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>15.01.2024 5 1 548,28 ООО &quot;УЧЕБНАЯ ПОСТАВКА&quot; возврат по учебному договору № 5 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>16.01.2024 6 1 685,35 ООО &quot;ПРИМЕР-СЕРВИС&quot; услуги по учебному соглашению № 6 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>04.01.2024 7 1 822,42 ООО &quot;ОБРАЗЕЦ-ОДИН&quot; оплата по учебному счёту № 7 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>17.01.2024 8 1 959,49 ООО &quot;ОБРАЗЕЦ-ДВА&quot; возврат по учебному договору № 8 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>18.01.2024 9 2 096,56 ЗАО &quot;ПРИМЕРНОЕ&quot; услуги по учебному соглашению № 9 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>05.01.2024 10 2 233,63 ИП ОБРАЗЦОВ О. О. оплата по учебному счёту № 10 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>19.01.2024 11 2 370,70 ООО &quot;УЧЕБНАЯ ПОСТАВКА&quot; возврат по учебному договору № 11 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>20.01.2024 12 2 507,77 ООО &quot;ПРИМЕР-СЕРВИС&quot; услуги по учебному соглашению № 12 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>06.01.2024 13 2 644,84 ООО &quot;ОБРАЗЕЦ-ОДИН&quot; оплата по учебному счёту № 13 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>21.01.2024 14 2 781,91 ООО &quot;ОБРАЗЕЦ-ДВА&quot; возврат по учебному договору № 14 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>22.01.2024 15 2 918,98 ЗАО &quot;ПРИМЕРНОЕ&quot; услуги по учебному соглашению № 15 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr><tr><td>07.01.2024 16 3 055,05 ИП ОБРАЗЦОВ О. О. оплата по учебному счёту № 16 (УЧЕБНЫЙ ОБРАЗЕЦ)</td></tr></table></div><div class="snoska">Видно: страница 1 целиком, 16 строк<br>Не видно: шире страницы уровней нет: дальше — сам документ</div></div></div><div class="karta"><div class="mnk">2. Значение и сомнение</div><div class="sopost"><div class="para"><b>В документе</b><span class="str">→</span><span>03.01.2024</span></div></div><div class="sopost"><div class="para"><b>Станок прочёл</b><span class="str">→</span><span>2024-01-03</span></div></div><div class="sopost"><div class="para"><b>В таблицу пойдёт</b><span class="str">→</span><span>2024-01-03</span></div></div><div class="prichina"><b>Почему спрашиваем</b>Дата читается двояко: 03.01 — это и третье января, и первое марта. Станок прочёл: 2024-01-03. Выбор сделан объявлением семейства, а не документом.</div></div><div class="karta"><div class="mnk">3. Что решить</div><div class="sopost"><div class="para"><b>Подтвердить</b><span class="str">→</span><span>значение верно</span></div><div class="sost sost-zel">● основание одной строкой</div></div><div class="sopost"><div class="para"><b>Исправить</b><span class="str">→</span><span>значение неверно</span></div><div class="sost sost-zel">● старое и новое хранятся оба</div></div><div class="sopost"><div class="para"><b>Отклонить</b><span class="str">→</span><span>это не данные</span></div><div class="sost sost-zel">● строка уйдёт в «Проверку»</div></div><div class="sopost"><div class="para"><b>Вернуть шаблон</b><span class="str">→</span><span>беда повторяется</span></div><div class="sost sost-zhel">● остановит выпуск</div></div><div class="knopki" style="margin-top:18px"><span class="sinyaya">Подтвердить</span><span class="belaya">Исправить</span></div></div></div></div><div class="ekran"><h1 class="zag">PDF и будущий Excel видны одновременно</h1><p class="pod">Ни одно новое или исчезнувшее поле не проходит без решения.</p><div class="trikol"><div class="karta"><div class="mnk">1. Исходный PDF</div><div class="list"><div class="titul">Выписка (учебная)</div><table class="dok"><tr><th>Дата</th><th>Номер</th><th>Сумма</th><th>Признак</th></tr><tr><td>02.01.2024</td><td>1</td><td>1 000,00</td><td class="mesto">кредит</td></tr><tr><td>13.01.2024</td><td>2</td><td>1 137,07</td><td class="mesto">дебет</td></tr><tr><td>14.01.2024</td><td>3</td><td>1 274,14</td><td class="mesto">дебет</td></tr><tr><td>03.01.2024</td><td>4</td><td>1 411,21</td><td class="mesto">кредит</td></tr><tr><td>15.01.2024</td><td>5</td><td>1 548,28</td><td class="mesto">дебет</td></tr><tr><td>16.01.2024</td><td>6</td><td>1 685,35</td><td class="mesto">дебет</td></tr><tr><td>04.01.2024</td><td>7</td><td>1 822,42</td><td class="mesto">кредит</td></tr></table></div><div class="snoska">Страница 1 из 53  •  колонка «Признак» новая</div></div><div class="karta"><div class="mnk">2. Сопоставление</div><div class="sopost"><div class="para"><b>Дата</b><span class="str">→</span><span>Дата</span></div><div class="sost sost-zel">● Совпало</div></div><div class="sopost"><div class="para"><b>Номер</b><span class="str">→</span><span>Номер документа</span></div><div class="sost sost-zel">● Совпало</div></div><div class="sopost"><div class="para"><b>Сумма</b><span class="str">→</span><span>Сумма</span></div><div class="sost sost-zel">● Совпало</div></div><div class="sopost"><div class="para"><b>Признак</b><span class="str">→</span><span>—</span></div><div class="sost sost-zhel">● Нужно решить</div></div><div class="sopost"><div class="para"><b>Контрагент</b><span class="str">→</span><span>Контрагент</span></div><div class="sost sost-zel">● Совпало</div></div><div class="plashka">1 поле без решения</div></div><div class="karta"><div class="mnk">3. Будущий Excel</div><div style="font-weight:700;margin-bottom:12px">Лист: Данные</div><table class="excel"><tr><th>Дата</th><th>Номер</th><th>Сумма</th><th>Признак</th></tr><tr><td>02.01.2024</td><td>1</td><td>1 000,00</td><td>—</td></tr><tr><td>13.01.2024</td><td>2</td><td>1 137,07</td><td>—</td></tr><tr><td>14.01.2024</td><td>3</td><td>1 274,14</td><td>—</td></tr><tr><td>03.01.2024</td><td>4</td><td>1 411,21</td><td>—</td></tr><tr><td>15.01.2024</td><td>5</td><td>1 548,28</td><td>—</td></tr></table><div class="plashka" style="margin-top:16px">Выберите действие для «Признак»</div><div class="pogashena" style="margin-top:12px">Сначала решите 1 поле</div></div></div></div><div class="hvost">Показ собран станком из учебного документа. Настоящих документов в нём нет. Строй экранов — по макетам владельца.</div>
+</body></html>
