@@ -1,6 +1,6 @@
 {
  "версия": "outbox-manifest/1",
- "отпечаток": "14aab45a8b73",
+ "отпечаток": "48ced17eebf7",
  "файлы": [
   {
    "имя": "README.md",
@@ -156,6 +156,11 @@
    "имя": "otchet-VN-34.md",
    "байт": 9740,
    "sha256": "8ef0e80054f918541a8e679a0de664803cbca4708fdb89846b5cd85890b45212"
+  },
+  {
+   "имя": "otchet-VN-35.md",
+   "байт": 16437,
+   "sha256": "92801195f042a263ed83574efea27a4116458490399a7ae24c19058b6b15c24e"
   },
   {
    "имя": "otchet-VN-4.md",
@@ -418,19 +423,24 @@
    "sha256": "baae8d372667bc4d89b489b91adc80f70410a31766d3d039e0ce429d195d45cb"
   },
   {
-   "имя": "pokaz-ekranov-2.html",
+   "имя": "otmeneno/pokaz-ekranov-2.html",
    "байт": 20333,
    "sha256": "29c7f9d8638d052b805ddb0970abb673f946c2962c59511911425aadf3763888"
   },
   {
-   "имя": "pokaz-ekranov-3.html",
+   "имя": "otmeneno/pokaz-ekranov-3.html",
    "байт": 29182,
    "sha256": "d94aa57f5e56d43e2ca1c5035675b5cf434562fa68edcdd5cb98771f52cbe4d9"
   },
   {
-   "имя": "pokaz-ekranov.html",
+   "имя": "otmeneno/pokaz-ekranov.html",
    "байт": 23594,
    "sha256": "a0b8ba539396012c745ab726803dbe759d53b67ad64c8779f6ae1c47643ca78c"
+  },
+  {
+   "имя": "otmeneno/ОТМЕНЕНО.md",
+   "байт": 1401,
+   "sha256": "7e42f96a5784a19909c801d6e0cf0fdd682af998b7cfd3ef09962b0651c6c3a0"
   },
   {
    "имя": "spisok-dokumentov-1.md",
@@ -449,8 +459,8 @@
   },
   {
    "имя": "состояние.md",
-   "байт": 83698,
-   "sha256": "fca56c945bd115419fa414a92e741d68cc405bfbe34c1645c68aff657cf787b1"
+   "байт": 85620,
+   "sha256": "f428631e7d0f3d0d4983177d691862fd96b41b466ce924efc2133179f1b278aa"
   }
  ]
 }
