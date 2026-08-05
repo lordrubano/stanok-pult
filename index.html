@@ -87,7 +87,7 @@ footer p{margin:0}
 <div class="wrap">
 <header>
 <h1>Пульт станка PDF→Excel</h1>
-<p class="sub">Состояние взято только из реестра. Собрано 05.08.2026 19:56.</p>
+<p class="sub">Состояние взято только из реестра. Собрано 05.08.2026 20:13.</p>
 </header>
 <section class="card total">
 <h2>Весь план</h2>
@@ -263,7 +263,7 @@ footer p{margin:0}
 <details class="phase" open>
 <summary>
 <span class="pname">Фаза 6</span>
-<span class="pcount">5/8 шагов · 16/21 веса</span>
+<span class="pcount">5/8 шагов · 16/21 веса · <span class="going">1 в работе</span></span>
 </summary>
 <div class="pbody">
 <div class="grid2">
@@ -276,7 +276,7 @@ footer p{margin:0}
 <tr class="closed"><td class="c mono">64</td><td>Восстановление после частичного сбоя<div class="prim">Испытание, а не описание. Порчено пять состояний: оборванный журнал, вырезанная запись, битая часть после нарезки, недописанный итог, нехватка прав и места - все названы кодом и словами, ничего не чинится молча. Итог пишется сторонним файлом и переносится одним движением: под настоящим именем половины не бывает. Главная находка испытания - документ с вырезанной серединой (107 страниц из 218) шёл без единого видимого возражения, хотя правила итогов внутри говорили, что документ не сходится сам с собой: этап объявлял успех потому, что правила посчитаны, а не пройдены. Исправлено открыто, проверки поставлены</div></td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
 <tr class="closed"><td class="c mono">65</td><td>Испытание автономности<div class="prim">Испытание, а не декларация. Сеть запрещена внутри процесса до загрузки библиотек разбора и проверена на себе: соединение и разрешение имени падают с названной причиной. Настоящая выписка прошла весь путь без сети - 3318 записей за 10,2 с, разбор в клетке, Excel записан. Попыток выйти наружу ноль. Ни один модуль станка не умеет в сеть: ни socket, ни urllib, ни http - только имена пространств имён XML. Проверок обновлений и отправки нет. Сторонних библиотек две, обе работают в файлах. Наружу ходят три места - отправка ящика, публикация пульта, офсайт, - и ни одно не лежит на пути документа</div></td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill closed">закрыт</span></td></tr>
 <tr class="closed"><td class="c mono">66</td><td>Обнаружение дрейфа<div class="prim">Дрейф ловится сличением слепков, а не отказом: документ может разбираться успешно и при этом иначе. В слепок входит только независимое от периода - полосы колонок, шапка, граница операции, ориентация, поворот, число колонок и доли  числа страниц и записей не входят вовсе. Три исхода: форма та же, дрейф (смотреть оснастку), другая форма (остановиться). На трёх настоящих документах: тот же банк за другой период - форма та же, ноль сдвигов  другая форма того же банка - другая форма, два признака по устройству. Дважды исправлено по итогам прогона: шапка бралась первыми строками, где лежат реквизиты, и разный период выдавался за дрейф</div></td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
-<tr class="open"><td class="c mono">67</td><td>Вторая и третья оснастки</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="open"><td class="c mono">67</td><td>Вторая и третья оснастки<div class="prim">Вторая оснастка написана на выписке второго банка, лежавшей в корпусе. Всё измерено, ничего не угадано: книжный лист без поворота, 14 страниц, полосы колонок стоят намертво на 0.045775, 0.161935 и 0.316395, сумма выключена вправо, порядок дат доказан числом 31, разделители измерены на 328 суммах. Язык оснастки описал чужую форму почти целиком: опознание формы в обе стороны, полосы, граница операции - 328 операций при сошедшемся учёте строк, даты, тексты, порядок, объявление контрольных итогов через сторону по знаку числа. Не описал одно место: в каждой денежной ячейке валюта записана внутри вида минус 6 запятая 75 RUR, и правила отбросить обозначение валюты язык не имеет - 328 сумм из 328 остались без значения. Форма под язык не подогнана: отказ типизатора оставлен как есть и назван в самой оснастке. Попутно найден и закрыт дефект языка: негодный по устройству раздел проверок проходил чтение оснастки и валил конвейер через десять этапов - теперь отказ приходит при чтении. Третья оснастка ждёт документа третьего банка</div></td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">идёт</span></td></tr>
 <tr class="open"><td class="c mono">68</td><td>Памятка и обучение операторов</td><td class="cx">простой</td><td class="c mono">1</td><td><span class="pill open">не начат</span></td></tr>
 <tr class="open"><td class="c mono">69</td><td>Замер сэкономленного времени и полной стоимости</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
 </tbody></table></div></details>
@@ -324,9 +324,9 @@ footer p{margin:0}
 </tbody></table></div></details>
 </div></section>
 <section class="card">
-<h2>Ящик отправки — выпуск 094</h2>
-<p class="sub">Файлов 105, отпечаток d55c361e8915. Неизменная опись этого
-выпуска: <a href="outbox/vypuski/opis-094.html">outbox/vypuski/opis-094.html</a>
+<h2>Ящик отправки — выпуск 095</h2>
+<p class="sub">Файлов 106, отпечаток 36fac8592abc. Неизменная опись этого
+выпуска: <a href="outbox/vypuski/opis-095.html">outbox/vypuski/opis-095.html</a>
 — по тому адресу список не изменится никогда.</p>
 <ul class="vn">
 <li><a href="outbox/README.md">README.md</a> <span class="of">5888 байт</span></li>
@@ -364,6 +364,7 @@ footer p{margin:0}
 <li><a href="outbox/otchet-VN-36.md">otchet-VN-36.md</a> <span class="of">20460 байт</span></li>
 <li><a href="outbox/otchet-VN-37.md">otchet-VN-37.md</a> <span class="of">11473 байт</span></li>
 <li><a href="outbox/otchet-VN-38.md">otchet-VN-38.md</a> <span class="of">18490 байт</span></li>
+<li><a href="outbox/otchet-VN-39.md">otchet-VN-39.md</a> <span class="of">12304 байт</span></li>
 <li><a href="outbox/otchet-VN-4.md">otchet-VN-4.md</a> <span class="of">23108 байт</span></li>
 <li><a href="outbox/otchet-VN-5.md">otchet-VN-5.md</a> <span class="of">12351 байт</span></li>
 <li><a href="outbox/otchet-VN-6.md">otchet-VN-6.md</a> <span class="of">10749 байт</span></li>
@@ -433,10 +434,10 @@ footer p{margin:0}
 <li><a href="outbox/svodka-dlya-vladeltsa-3-2.md">svodka-dlya-vladeltsa-3-2.md</a> <span class="of">20228 байт</span></li>
 <li><a href="outbox/svodka-dlya-vladeltsa-3.md">svodka-dlya-vladeltsa-3.md</a> <span class="of">17045 байт</span></li>
 <li><a href="outbox/svodka-dlya-vladeltsa.md">svodka-dlya-vladeltsa.md</a> <span class="of">13611 байт</span></li>
-<li><a href="outbox/состояние.md">состояние.md</a> <span class="of">113300 байт</span></li>
+<li><a href="outbox/состояние.md">состояние.md</a> <span class="of">115496 байт</span></li>
 </ul>
 <p class="sub"><a href="outbox/">Опись по общему адресу</a> может прийти
 из кеша несвежей. Эта страница пересобирается при каждом коммите.</p>
 </section>
-<footer><p>Источник: <span class="mono">registry/registry.csv</span>, SHA-256 <span class="mono">BDDA4B14E8438562…</span>. Состояния в реестре: закрыт, идёт, не начат. Пересборка: <span class="mono">python pult/build.py</span>.</p></footer>
+<footer><p>Источник: <span class="mono">registry/registry.csv</span>, SHA-256 <span class="mono">AD62CBDEF2B8DB66…</span>. Состояния в реестре: закрыт, идёт, не начат. Пересборка: <span class="mono">python pult/build.py</span>.</p></footer>
 </div>
