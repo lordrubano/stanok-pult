@@ -1,6 +1,6 @@
 {
  "версия": "outbox-manifest/1",
- "отпечаток": "d0a4d87574ed",
+ "отпечаток": "41a4ddb7111d",
  "файлы": [
   {
    "имя": "README.md",
@@ -493,14 +493,19 @@
    "sha256": "1f0aab1b0fae249b4d89ae0c5e3baa20a3a6126599fc170a291cec5e1ee27073"
   },
   {
+   "имя": "svodka-dlya-vladeltsa-3.md",
+   "байт": 17045,
+   "sha256": "04c218906a9eda7dca636f5540708e6ab0bb36335dedcfe39dd366addeadf1c6"
+  },
+  {
    "имя": "svodka-dlya-vladeltsa.md",
    "байт": 13611,
    "sha256": "9a33321834e900015bebb216e88e93344395cd0fad0db16f3579c4759a163136"
   },
   {
    "имя": "состояние.md",
-   "байт": 104987,
-   "sha256": "0e2871ad6b9fec7bbdbf65891a80b99fc2ed6bcbb4d23718d82c0a3e1ae60aaf"
+   "байт": 106124,
+   "sha256": "ea0770c1875c3225cf0492e269e53319e58fdb0a07988073d3ccbfadb72d3b9c"
   }
  ]
 }
