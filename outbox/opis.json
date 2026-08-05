@@ -1,6 +1,6 @@
 {
  "версия": "outbox-manifest/1",
- "отпечаток": "b6e47a9228cb",
+ "отпечаток": "a35e97f3cb8b",
  "файлы": [
   {
    "имя": "README.md",
@@ -406,6 +406,11 @@
    "имя": "otchet-shag-79.md",
    "байт": 12138,
    "sha256": "baae8d372667bc4d89b489b91adc80f70410a31766d3d039e0ce429d195d45cb"
+  },
+  {
+   "имя": "pokaz-ekranov-2.html",
+   "байт": 20333,
+   "sha256": "29c7f9d8638d052b805ddb0970abb673f946c2962c59511911425aadf3763888"
   },
   {
    "имя": "pokaz-ekranov.html",

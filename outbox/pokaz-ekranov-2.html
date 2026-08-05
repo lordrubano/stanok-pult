@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Экраны станка — учебный показ</title>
+<style>
+:root { color-scheme: light dark; }
+body { font: 15px/1.5 system-ui, sans-serif; margin: 0; padding: 24px;
+       max-width: 1100px; }
+h1 { font-size: 20px; margin: 0 0 4px; }
+.tih { opacity: .65; font-size: 13px; }
+table { border-collapse: collapse; width: 100%; margin-top: 16px; }
+th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #8884; }
+th { font-weight: 600; font-size: 13px; opacity: .75; }
+code { font-family: ui-monospace, monospace; font-size: 13px; }
+</style>
+</head><body>
+<meta name="robots" content="noindex, nofollow"><meta name="referrer" content="no-referrer"><style>
+body { font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+       margin: 0; padding: 20px; max-width: 1180px; background: #f4f5f7;
+       color: #17181c; }
+@media (prefers-color-scheme: dark) {
+  body { background: #16171a; color: #e8e9ec; }
+  .okno { background: #1e2024; border-color: #33363d; }
+  .shapka { background: #26292f; }
+  .plitka { border-color: #33363d; }
+  .list { background: #202329; color: #dfe2e6; border-color: #33363d; }
+  .podpis, .plitka .p, .zagolovok { color: #9aa0a8; }
+  .polya td { border-color: #2b2e34; }
+}
+h2.shag { font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+          color: #6b7280; margin: 40px 0 10px; }
+.uchebnoe { background: #b3261e; color: #fff; padding: 9px 14px;
+            border-radius: 7px; font-weight: 600; font-size: 14px;
+            margin-bottom: 14px; }
+ul.zapiska { font-size: 15px; margin: 0 0 8px; padding-left: 20px; }
+ul.zapiska li { margin: 3px 0; }
+.ryad { display: flex; gap: 18px; align-items: flex-start; }
+.podpis { flex: 0 0 190px; font-size: 13px; color: #6b7280; padding-top: 34px; }
+.okno { flex: 1 1 auto; background: #fff; border: 1px solid #d7dae0;
+        border-radius: 10px; overflow: hidden;
+        box-shadow: 0 1px 3px #0000001a; }
+.shapka { background: #eceef2; padding: 7px 12px; font-size: 13px;
+          display: flex; gap: 8px; align-items: center; }
+.tochki { letter-spacing: 2px; color: #b9bec7; }
+.telo { padding: 16px; }
+.plitki { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.plitka { border: 1px solid #d7dae0; border-radius: 8px; padding: 8px 12px;
+          min-width: 96px; }
+.plitka .n { font-size: 22px; font-weight: 650; line-height: 1.1; }
+.plitka .p { font-size: 12px; color: #6b7280; }
+.plitka.pusto { opacity: .4; }
+.plitka.zhdet { border-color: #b3261e; border-width: 2px; }
+.glavnoe { border: 2px solid #1a73e8; border-radius: 10px; padding: 14px 16px;
+           background: #1a73e80d; }
+.glavnoe .ch { font-size: 20px; font-weight: 650; margin-bottom: 3px; }
+.glavnoe .pch { font-size: 13px; color: #5f6368; }
+.knopka { display: inline-block; background: #1a73e8; color: #fff;
+          border-radius: 7px; padding: 10px 16px; font-weight: 600;
+          font-size: 15px; }
+.knopki { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 12px;
+          margin-top: 12px; border-top: 1px solid #e3e5ea; }
+.knopka2 { border: 1px solid #c3c7ce; border-radius: 7px; padding: 8px 14px;
+           font-size: 14px; }
+.knopka2.osn { border-color: #1a73e8; color: #1a73e8; font-weight: 600; }
+table.raskr { border-collapse: collapse; width: 100%; font-size: 14px; }
+table.raskr th { text-align: left; width: 165px; vertical-align: top;
+                 color: #6b7280; font-weight: 500; padding: 5px 10px 5px 0; }
+table.raskr td { padding: 5px 0; }
+table.prim { border-collapse: collapse; width: 100%; font-size: 13px;
+             margin-top: 10px; }
+table.prim th { text-align: left; color: #6b7280; font-weight: 500;
+                padding: 4px 8px 4px 0; font-size: 12px; }
+table.prim td { padding: 4px 8px 4px 0; border-top: 1px solid #e3e5ea; }
+.dve { display: flex; gap: 16px; align-items: flex-start; }
+.sleva { flex: 1 1 54%; min-width: 0; }
+.sprava { flex: 1 1 46%; min-width: 0; }
+.zagolovok { font-size: 12px; color: #6b7280; text-transform: uppercase;
+             letter-spacing: .08em; margin-bottom: 6px; }
+.list { background: #fbfbfc; border: 1px solid #e3e5ea; border-radius: 8px;
+        padding: 10px 12px; font: 12.5px/1.7 ui-monospace, monospace;
+        white-space: pre; overflow-x: auto; }
+.list span { display: block; }
+.list .otm { background: #fff3bf; font-weight: 600; }
+.polya { border-collapse: collapse; width: 100%; font-size: 14px; }
+.polya th { text-align: left; color: #6b7280; font-weight: 500;
+            padding: 6px 10px 6px 0; width: 150px; }
+.polya td { padding: 6px 0; border-bottom: 1px solid #eceef2;
+            font-family: ui-monospace, monospace; }
+.prichina { margin-top: 12px; border-left: 3px solid #f0a202;
+            background: #f0a2020f; padding: 10px 12px; font-size: 14px; }
+.prichina b { display: block; margin-bottom: 2px; }
+.vidy { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.vidy label { border: 1px solid #c3c7ce; border-radius: 20px;
+              padding: 4px 12px; font-size: 13px; cursor: pointer; }
+.perekl { position: absolute; opacity: 0; pointer-events: none; }
+.vid { display: none; }
+#v0:checked ~ .telo .vid0, #v1:checked ~ .telo .vid1,
+#v2:checked ~ .telo .vid2, #v3:checked ~ .telo .vid3,
+#v4:checked ~ .telo .vid4 { display: block; }
+#v0:checked ~ .telo label[for=v0], #v1:checked ~ .telo label[for=v1],
+#v2:checked ~ .telo label[for=v2], #v3:checked ~ .telo label[for=v3],
+#v4:checked ~ .telo label[for=v4] { background: #1a73e8; color: #fff;
+                                    border-color: #1a73e8; }
+.hvost { color: #6b7280; font-size: 13px; margin-top: 26px;
+         border-top: 1px solid #d7dae0; padding-top: 12px; }
+@media (max-width: 860px) {
+  .ryad { flex-direction: column; }
+  .podpis { flex: 1 1 auto; padding-top: 0; }
+  .dve { flex-direction: column; }
+}
+</style><div class="uchebnoe">УЧЕБНЫЙ ОБРАЗЕЦ — суммы, названия и назначения вымышлены. Настоящее здесь одно: сколько работы достаётся человеку.</div><ul class="zapiska"><li>Так выглядит рабочее место оператора: станок переводит выписки из PDF в Excel, а где сомневается — спрашивает человека.</li><li>Документ здесь <b>выдуманный</b>, а работы столько же, сколько на настоящем: 840 операций, из них 231 с сомнением.</li><li>Главное — экран 2: 213 одинаковых сомнений решаются <b>одним</b> нажатием.</li><li>Кнопки не работают: это вид, а не программа. Но пять кнопок над документом на экране 3 — переключаются.</li><li>Скажите, что непонятно и чего не хватает: ответьте тому, кто прислал ссылку.</li></ul><h2 class="shag">Экран 1 · с чего начинается день</h2><div class="ryad"><div class="podpis"><b>Одно действие крупно.</b><br>Оператор не выбирает из списка задач — станок говорит, что делать сейчас и почему.</div><div class="okno"><div class="shapka"><span class="tochki">●●●</span><span>Станок — очередь</span></div><div class="telo"><div class="plitki"><div class="plitka pusto"><div class="n">0</div><div class="p">новые<br>документы</div></div><div class="plitka pusto"><div class="n">0</div><div class="p">согласовать шаблон<br>документы</div></div><div class="plitka pusto"><div class="n">0</div><div class="p">обрабатываются<br>документы</div></div><div class="plitka zhdet"><div class="n">840</div><div class="p">проверить<br>записи</div></div><div class="plitka pusto"><div class="n">0</div><div class="p">готово<br>документы</div></div><div class="plitka pusto"><div class="n">0</div><div class="p">заблокировано<br>документы</div></div></div><div class="glavnoe"><div class="ch">Разобрать группу «двоякая дата» — 213 записей</div><div class="pch">из 840 записей на проверке 213 отличаются только числами: это одно решение, а не 213</div></div></div></div></div><h2 class="shag">Экран 2 · решение сразу по всей группе</h2><div class="ryad"><div class="podpis"><b>Одно решение вместо 213.</b><br>Прежде чем применить, станок показывает, из чего группа составлена и что изменится.</div><div class="okno"><div class="shapka"><span class="tochki">●●●</span><span>Станок — группа однородных сомнений</span></div><div class="telo"><table class="raskr"><tr><th>Правило</th><td>одинаковый род сомнения: двоякая дата; поля: дата</td></tr><tr><th>Шаблон</th><td>учебное-1, версия учебное-1/1</td></tr><tr><th>Затронуто</th><td>1 документ, 213 записей</td></tr><tr><th>Критические поля</th><td>дата (дата), сумма (деньги)</td></tr><tr><th>Что изменится</th><td>все 213 записей группы получат одно и то же решение и одно основание; первичные значения не меняются, решение ложится отдельным слоем</td></tr></table><table class="prim"><tr><th>Пример</th><th>В документе</th><th>Станок прочёл</th><th>Место</th></tr><tr><td>из начала</td><td>02.01.2024</td><td>2024-01-02</td><td>страница 1, строка страница[1]/строка[0]</td></tr><tr><td>из середины</td><td>08.10.2024</td><td>2024-10-08</td><td>страница 20, строка страница[20]/строка[14]</td></tr><tr><td>из конца</td><td>04.08.2024</td><td>2024-08-04</td><td>страница 40, строка страница[40]/строка[12]</td></tr></table><div class="knopki"><span class="knopka">Применить решение к 213 записям этой группы</span><span class="knopka2">Отмена</span></div></div></div></div><h2 class="shag">Экран 3 · разбор одной записи</h2><div class="ryad"><div class="podpis"><b>Слева — само место в документе.</b><br>Пять кнопок сверху раздвигают вид: от одного значения до целой страницы. Значение может быть прочитано верно, а относиться к соседней строке.</div><div class="okno"><div class="shapka"><span class="tochki">●●●</span><span>Станок — разбор записи</span></div><input type="radio" name="vid" id="v0" class="perekl"><input type="radio" name="vid" id="v1" class="perekl"><input type="radio" name="vid" id="v2" class="perekl" checked><input type="radio" name="vid" id="v3" class="perekl"><input type="radio" name="vid" id="v4" class="perekl"><div class="telo"><div class="vidy"><label for="v0">поле</label><label for="v1">строка</label><label for="v2">соседние строки</label><label for="v3">таблица</label><label for="v4">страница</label></div><div class="dve"><div class="sleva"><div class="vid vid0"><div class="zagolovok">страница 1, строка страница[1]/строка[3] · только само значение</div><div class="list"><span class=otm>03.01.2024</span></div><div class="podpis" style="padding-top:6px">Не видно: не видно, к той ли строке оно относится — раздвиньте до строки</div></div><div class="vid vid1"><div class="zagolovok">страница 1, строка страница[1]/строка[3] · вся строка записи</div><div class="list"><span class=otm>03.01.2024  4  1 411,21  ИП ОБРАЗЦОВ О. О.  оплата по учебному счёту № 4 (УЧЕБНЫЙ ОБРАЗЕЦ)</span></div><div class="podpis" style="padding-top:6px">Не видно: не видно соседних строк — не проверить, не съехала ли граница операции</div></div><div class="vid vid2"><div class="zagolovok">страница 1, строка страница[1]/строка[3] · строка записи и её соседи сверху и снизу</div><div class="list"><span>14.01.2024 3 1 274,14 ЗАО &quot;ПРИМЕРНОЕ&quot; услуги по учебному соглашению № 3 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span class=otm>03.01.2024  4  1 411,21  ИП ОБРАЗЦОВ О. О.  оплата по учебному счёту № 4 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>15.01.2024 5 1 548,28 ООО &quot;УЧЕБНАЯ ПОСТАВКА&quot; возврат по учебному договору № 5 (УЧЕБНЫЙ ОБРАЗЕЦ)</span></div><div class="podpis" style="padding-top:6px">Не видно: не видно таблицы целиком — не проверить, та ли это колонка</div></div><div class="vid vid3"><div class="zagolovok">страница 1, строка страница[1]/строка[3] · 12 строк вокруг записи</div><div class="list"><span class=otm>02.01.2024 1 1 000,00 ООО &quot;ОБРАЗЕЦ-ОДИН&quot; оплата по учебному счёту № 1 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>13.01.2024 2 1 137,07 ООО &quot;ОБРАЗЕЦ-ДВА&quot; возврат по учебному договору № 2 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>14.01.2024 3 1 274,14 ЗАО &quot;ПРИМЕРНОЕ&quot; услуги по учебному соглашению № 3 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>03.01.2024 4 1 411,21 ИП ОБРАЗЦОВ О. О. оплата по учебному счёту № 4 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>15.01.2024 5 1 548,28 ООО &quot;УЧЕБНАЯ ПОСТАВКА&quot; возврат по учебному договору № 5 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>16.01.2024 6 1 685,35 ООО &quot;ПРИМЕР-СЕРВИС&quot; услуги по учебному соглашению № 6 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>04.01.2024 7 1 822,42 ООО &quot;ОБРАЗЕЦ-ОДИН&quot; оплата по учебному счёту № 7 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>17.01.2024 8 1 959,49 ООО &quot;ОБРАЗЕЦ-ДВА&quot; возврат по учебному договору № 8 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>18.01.2024 9 2 096,56 ЗАО &quot;ПРИМЕРНОЕ&quot; услуги по учебному соглашению № 9 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>05.01.2024 10 2 233,63 ИП ОБРАЗЦОВ О. О. оплата по учебному счёту № 10 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>19.01.2024 11 2 370,70 ООО &quot;УЧЕБНАЯ ПОСТАВКА&quot; возврат по учебному договору № 11 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>20.01.2024 12 2 507,77 ООО &quot;ПРИМЕР-СЕРВИС&quot; услуги по учебному соглашению № 12 (УЧЕБНЫЙ ОБРАЗЕЦ)</span></div><div class="podpis" style="padding-top:6px">Не видно: не видно верха страницы — не проверить заголовки колонок</div></div><div class="vid vid4"><div class="zagolovok">страница 1, строка страница[1]/строка[3] · страница 1 целиком, 16 строк</div><div class="list"><span class=otm>02.01.2024 1 1 000,00 ООО &quot;ОБРАЗЕЦ-ОДИН&quot; оплата по учебному счёту № 1 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>13.01.2024 2 1 137,07 ООО &quot;ОБРАЗЕЦ-ДВА&quot; возврат по учебному договору № 2 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>14.01.2024 3 1 274,14 ЗАО &quot;ПРИМЕРНОЕ&quot; услуги по учебному соглашению № 3 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>03.01.2024 4 1 411,21 ИП ОБРАЗЦОВ О. О. оплата по учебному счёту № 4 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>15.01.2024 5 1 548,28 ООО &quot;УЧЕБНАЯ ПОСТАВКА&quot; возврат по учебному договору № 5 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>16.01.2024 6 1 685,35 ООО &quot;ПРИМЕР-СЕРВИС&quot; услуги по учебному соглашению № 6 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>04.01.2024 7 1 822,42 ООО &quot;ОБРАЗЕЦ-ОДИН&quot; оплата по учебному счёту № 7 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>17.01.2024 8 1 959,49 ООО &quot;ОБРАЗЕЦ-ДВА&quot; возврат по учебному договору № 8 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>18.01.2024 9 2 096,56 ЗАО &quot;ПРИМЕРНОЕ&quot; услуги по учебному соглашению № 9 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>05.01.2024 10 2 233,63 ИП ОБРАЗЦОВ О. О. оплата по учебному счёту № 10 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>19.01.2024 11 2 370,70 ООО &quot;УЧЕБНАЯ ПОСТАВКА&quot; возврат по учебному договору № 11 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>20.01.2024 12 2 507,77 ООО &quot;ПРИМЕР-СЕРВИС&quot; услуги по учебному соглашению № 12 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>06.01.2024 13 2 644,84 ООО &quot;ОБРАЗЕЦ-ОДИН&quot; оплата по учебному счёту № 13 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>21.01.2024 14 2 781,91 ООО &quot;ОБРАЗЕЦ-ДВА&quot; возврат по учебному договору № 14 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>22.01.2024 15 2 918,98 ЗАО &quot;ПРИМЕРНОЕ&quot; услуги по учебному соглашению № 15 (УЧЕБНЫЙ ОБРАЗЕЦ)</span><span>07.01.2024 16 3 055,05 ИП ОБРАЗЦОВ О. О. оплата по учебному счёту № 16 (УЧЕБНЫЙ ОБРАЗЕЦ)</span></div><div class="podpis" style="padding-top:6px">Не видно: шире страницы уровней нет: дальше — сам документ</div></div></div><div class="sprava"><div class="zagolovok">Значение и сомнение</div><table class="polya"><tr><th>В документе</th><td>03.01.2024</td></tr><tr><th>Станок прочёл</th><td>2024-01-03</td></tr><tr><th>В таблицу пойдёт</th><td>2024-01-03</td></tr></table><div class="prichina"><b>Почему спрашиваем</b>Дата читается двояко: 03.01 — это и третье января, и первое марта. Станок прочёл: 2024-01-03. Выбор сделан объявлением семейства, а не документом.</div><div class="knopki"><span class="knopka2 osn">Подтвердить</span><span class="knopka2">Исправить</span><span class="knopka2">Отклонить</span><span class="knopka2">Вернуть шаблон</span></div><div class="podpis" style="padding-top:8px">К каждому действию — основание одной строкой.</div></div></div></div></div></div><div class="hvost">Показ собран станком из учебного документа. Настоящих документов в нём нет.</div>
+</body></html>
