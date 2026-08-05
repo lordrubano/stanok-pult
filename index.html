@@ -87,13 +87,13 @@ footer p{margin:0}
 <div class="wrap">
 <header>
 <h1>Пульт станка PDF→Excel</h1>
-<p class="sub">Состояние взято только из реестра. Собрано 05.08.2026 16:28.</p>
+<p class="sub">Состояние взято только из реестра. Собрано 05.08.2026 16:59.</p>
 </header>
 <section class="card total">
 <h2>Весь план</h2>
 <div class="grid2">
-<div class="metric"><div class="label">Закрыто шагов</div><div class="big">65 <span class="of">из 87</span></div><div class="bar steps"><span style="width:74.7%"></span></div><div class="barval">74,7%</div></div>
-<div class="metric"><div class="label">Закрыто веса</div><div class="big">201,5 <span class="of">из 272,5</span></div><div class="bar weight"><span style="width:73.9%"></span></div><div class="barval">73,9%</div></div>
+<div class="metric"><div class="label">Закрыто шагов</div><div class="big">66 <span class="of">из 87</span></div><div class="bar steps"><span style="width:75.9%"></span></div><div class="barval">75,9%</div></div>
+<div class="metric"><div class="label">Закрыто веса</div><div class="big">205,5 <span class="of">из 272,5</span></div><div class="bar weight"><span style="width:75.4%"></span></div><div class="barval">75,4%</div></div>
 </div></section>
 <section class="card outside">
 <h2>Вне нумерации</h2>
@@ -303,12 +303,12 @@ footer p{margin:0}
 <details class="phase" open>
 <summary>
 <span class="pname">Фаза 8</span>
-<span class="pcount">3/10 шагов · 10/33 веса</span>
+<span class="pcount">4/10 шагов · 14/33 веса</span>
 </summary>
 <div class="pbody">
 <div class="grid2">
-<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:30.0%"></span></div><div class="barval">30%</div></div>
-<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:30.3%"></span></div><div class="barval">30,3%</div></div>
+<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:40.0%"></span></div><div class="barval">40%</div></div>
+<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:42.4%"></span></div><div class="barval">42,4%</div></div>
 </div>
 <table><thead><tr><th class="c">№</th><th>Шаг</th><th>Сложность</th><th class="c">Вес</th><th>Состояние</th></tr></thead><tbody>
 <tr class="closed"><td class="c mono">78</td><td>Местный узел интерфейса без сети<div class="prim">Узел слушает только петлевой адрес - не все адреса, проверено занятием места на внешнем адресе машины. Запрет наружу наложен с обеих сторон: узел не ходит, и страница не может - строгая политика содержимого без скриптов и внешних источников, иначе картинка-приманка унесла бы содержимое документа в адресе запроса. Узел едет внутри ядра, запуск одной командой. Двойники всех шести защит книги Excel: экранирование вместо обезвреживания формул, политика вместо запрета макросов, предел страницы, и главное - обратное чтение готовой страницы, которое ловит ошибку экранирования, а не веру в него. Испытано под сторожем сети на собранном изделии: обращений наружу ни одного. Найдено: переменные прокси перехватывают и петлевой адрес - узел цел, рвётся обращение к нему</div></td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
@@ -319,14 +319,14 @@ footer p{margin:0}
 <tr class="open"><td class="c mono">83</td><td>Дашборд клиента<div class="prim">Лицо над сводами наблюдаемости шага 63: счётчики, длительности, коды - и ни крупицы содержимого документов, тем же правилом, что и сама наблюдаемость</div></td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
 <tr class="open"><td class="c mono">84</td><td>Согласование шаблона и мастер<div class="prim">Режим 2 ТЗ 1.0 - самостоятельные производственные ворота. Три колонки: PDF, сопоставление, будущий Excel. Проба на части документа помечена пробой - итоги сходятся на пробе и итоги сходятся разные утверждения. Нерешённое поле блокирует запуск. Согласуются колонки клиентского результата, не листы контрольной книги. Сюда же чтение Excel клиента как образца. Осмысленная проверка требует второго семейства документов</div></td><td class="cx">очень сложный</td><td class="c mono">7</td><td><span class="pill open">не начат</span></td></tr>
 <tr class="open"><td class="c mono">85</td><td>Выпуск шаблона и библиотека<div class="prim">Путь черновика до подписанного пакета средствами шагов 70 и 74, библиотека уровней общий клиентский черновик архивный с приоритетом клиентского. Фиксация версии в неизменяемом журнале с именем согласовавшего</div></td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
-<tr class="open"><td class="c mono">86</td><td>Партия как объект учёта<div class="prim">Станок мыслит одним документом, всё ТЗ 1.0 построено на партии. Партия, клиент, состояния, сходимость счёта файлов, ворота приёма. Без этого шаги 80 и 83 изобретали бы партию наполовину каждый. Ставится до них</div></td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="closed"><td class="c mono">86</td><td>Партия как объект учёта<div class="prim">Партия объединяет файлы одной подачи и переживает подачи: клиент, период, состояние набора, сходимость счёта по партии, а не по подаче. Состояние рождается из состояний файлов в одном месте - функция состояние_партии, рукой не назначается, при чтении с диска выводится заново и не хранится. Из шести очередей ТЗ выводятся четыре, две названы невыводимыми со ссылкой на шаги 84 и 87 прямо на экране. Тождество документа по отпечатку партией не отменяется: тот же файл под другим именем остаётся одним документом, прежние имена не теряются, повтор не считается потерей. Замена входит механикой и не подменяет, а добавляет - прежний файл остаётся в состоянии заменён со ссылкой на новый, кнопка остаётся отдельной работой в режиме приёма. Найден и закрыт дефект шага 80: разметка экрана приёма была с макета владельца, а правила вида жили только в отменённом сборщике показа - 17 классов шли без вида. Облик пакета 1.2 перенесён в ядро отдельным модулем. Испытано живьём: узел поднят, настоящая выписка подана трижды через форму, партия пережила остановку узла</div></td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
 <tr class="open"><td class="c mono">87</td><td>Ворота выпуска<div class="prim">Часть VI ТЗ 1.0: результат не отдаётся при неизвестной полноте, незакрытых исключениях, несошедшемся итоге. Все проверки уже есть - шаги 34, 43, 45, 57. Нет одного места, где они складываются в можно или нельзя. Здесь же разделение клиентского результата и контрольного пакета части IV. После шага 82</div></td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
 </tbody></table></div></details>
 </div></section>
 <section class="card">
-<h2>Ящик отправки — выпуск 085</h2>
-<p class="sub">Файлов 95, отпечаток 959369e4b9d2. Неизменная опись этого
-выпуска: <a href="outbox/vypuski/opis-085.html">outbox/vypuski/opis-085.html</a>
+<h2>Ящик отправки — выпуск 086</h2>
+<p class="sub">Файлов 96, отпечаток 2717b1362bc4. Неизменная опись этого
+выпуска: <a href="outbox/vypuski/opis-086.html">outbox/vypuski/opis-086.html</a>
 — по тому адресу список не изменится никогда.</p>
 <ul class="vn">
 <li><a href="outbox/README.md">README.md</a> <span class="of">5888 байт</span></li>
@@ -416,6 +416,7 @@ footer p{margin:0}
 <li><a href="outbox/otchet-shag-78.md">otchet-shag-78.md</a> <span class="of">12036 байт</span></li>
 <li><a href="outbox/otchet-shag-79.md">otchet-shag-79.md</a> <span class="of">12138 байт</span></li>
 <li><a href="outbox/otchet-shag-80.md">otchet-shag-80.md</a> <span class="of">11542 байт</span></li>
+<li><a href="outbox/otchet-shag-86.md">otchet-shag-86.md</a> <span class="of">16410 байт</span></li>
 <li><a href="outbox/otmeneno/pokaz-ekranov-2.html">otmeneno/pokaz-ekranov-2.html</a> <span class="of">20333 байт</span></li>
 <li><a href="outbox/otmeneno/pokaz-ekranov-3.html">otmeneno/pokaz-ekranov-3.html</a> <span class="of">29182 байт</span></li>
 <li><a href="outbox/otmeneno/pokaz-ekranov.html">otmeneno/pokaz-ekranov.html</a> <span class="of">23594 байт</span></li>
@@ -423,10 +424,10 @@ footer p{margin:0}
 <li><a href="outbox/spisok-dokumentov-1.md">spisok-dokumentov-1.md</a> <span class="of">4482 байт</span></li>
 <li><a href="outbox/svodka-dlya-vladeltsa-2.md">svodka-dlya-vladeltsa-2.md</a> <span class="of">14291 байт</span></li>
 <li><a href="outbox/svodka-dlya-vladeltsa.md">svodka-dlya-vladeltsa.md</a> <span class="of">13611 байт</span></li>
-<li><a href="outbox/состояние.md">состояние.md</a> <span class="of">90717 байт</span></li>
+<li><a href="outbox/состояние.md">состояние.md</a> <span class="of">93676 байт</span></li>
 </ul>
 <p class="sub"><a href="outbox/">Опись по общему адресу</a> может прийти
 из кеша несвежей. Эта страница пересобирается при каждом коммите.</p>
 </section>
-<footer><p>Источник: <span class="mono">registry/registry.csv</span>, SHA-256 <span class="mono">6BA4939940EC8F66…</span>. Состояния в реестре: закрыт, идёт, не начат. Пересборка: <span class="mono">python pult/build.py</span>.</p></footer>
+<footer><p>Источник: <span class="mono">registry/registry.csv</span>, SHA-256 <span class="mono">FC4E224372D44943…</span>. Состояния в реестре: закрыт, идёт, не начат. Пересборка: <span class="mono">python pult/build.py</span>.</p></footer>
 </div>
