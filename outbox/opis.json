@@ -1,6 +1,6 @@
 {
  "версия": "outbox-manifest/1",
- "отпечаток": "36fac8592abc",
+ "отпечаток": "466e92c56b08",
  "файлы": [
   {
    "имя": "README.md",
@@ -343,6 +343,11 @@
    "sha256": "88b04cffedb958bda7f5334f5c709e3b794622c3457c6ca42f7c96fcdb2a4afc"
   },
   {
+   "имя": "otchet-shag-5-6.md",
+   "байт": 10706,
+   "sha256": "c9b00f4c83189dfa4ab80ac16aaaf629183a46eed29fa1d47245fdb8a153b4bd"
+  },
+  {
    "имя": "otchet-shag-50.md",
    "байт": 9939,
    "sha256": "9d3c485faa577c1d8a4332b85cc3b5c7dfcc33792568d2979375b8002e57738a"
@@ -503,6 +508,11 @@
    "sha256": "7e42f96a5784a19909c801d6e0cf0fdd682af998b7cfd3ef09962b0651c6c3a0"
   },
   {
+   "имя": "poryadok-obrashcheniya-s-dokumentami.md",
+   "байт": 10192,
+   "sha256": "1cfef42df8be311cf7e7e7916545dc5a79dea7a8d23e7b6fc40db56e1385e268"
+  },
+  {
    "имя": "spisok-dokumentov-1.md",
    "байт": 4482,
    "sha256": "fbb4e905a572e988085dccd25b687744f72555117a3221abed929e1d09119abc"
@@ -529,8 +539,8 @@
   },
   {
    "имя": "состояние.md",
-   "байт": 115496,
-   "sha256": "ac21fdcbe893fbaa72e8f0f9a0a68207a7fcdb36c97060f10a6e23227b5427b7"
+   "байт": 117810,
+   "sha256": "6f1782ae09ed617477f0271cdba3f0e2d97ff6848274a469129abe9214f4fe96"
   }
  ]
 }
