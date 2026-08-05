@@ -87,12 +87,12 @@ footer p{margin:0}
 <div class="wrap">
 <header>
 <h1>Пульт станка PDF→Excel</h1>
-<p class="sub">Состояние взято только из реестра. Собрано 05.08.2026 07:21.</p>
+<p class="sub">Состояние взято только из реестра. Собрано 05.08.2026 07:43.</p>
 </header>
 <section class="card">
-<h2>Ящик отправки — выпуск 058</h2>
-<p class="sub">Файлов 66, отпечаток 0a9f79373b2c. Неизменная опись этого
-выпуска: <a href="outbox/vypuski/opis-058.html">outbox/vypuski/opis-058.html</a>
+<h2>Ящик отправки — выпуск 059</h2>
+<p class="sub">Файлов 67, отпечаток 30e6febe2d45. Неизменная опись этого
+выпуска: <a href="outbox/vypuski/opis-059.html">outbox/vypuski/opis-059.html</a>
 — по тому адресу список не изменится никогда.</p>
 <ul class="vn">
 <li><a href="outbox/README.md">README.md</a> <span class="of">5888 байт</span></li>
@@ -158,9 +158,10 @@ footer p{margin:0}
 <li><a href="outbox/otchet-shag-70.md">otchet-shag-70.md</a> <span class="of">7245 байт</span></li>
 <li><a href="outbox/otchet-shag-71.md">otchet-shag-71.md</a> <span class="of">7669 байт</span></li>
 <li><a href="outbox/otchet-shag-72.md">otchet-shag-72.md</a> <span class="of">9895 байт</span></li>
+<li><a href="outbox/otchet-shag-73.md">otchet-shag-73.md</a> <span class="of">17691 байт</span></li>
 <li><a href="outbox/spisok-dokumentov-1.md">spisok-dokumentov-1.md</a> <span class="of">4482 байт</span></li>
 <li><a href="outbox/svodka-dlya-vladeltsa.md">svodka-dlya-vladeltsa.md</a> <span class="of">13611 байт</span></li>
-<li><a href="outbox/состояние.md">состояние.md</a> <span class="of">52743 байт</span></li>
+<li><a href="outbox/состояние.md">состояние.md</a> <span class="of">54876 байт</span></li>
 </ul>
 <p class="sub"><a href="outbox/">Опись по общему адресу</a> может прийти
 из кеша несвежей. Эта страница пересобирается при каждом коммите.</p>
@@ -168,8 +169,8 @@ footer p{margin:0}
 <section class="card total">
 <h2>Весь план</h2>
 <div class="grid2">
-<div class="metric"><div class="label">Закрыто шагов</div><div class="big">59 <span class="of">из 77</span></div><div class="bar steps"><span style="width:76.6%"></span></div><div class="barval">76,6%</div></div>
-<div class="metric"><div class="label">Закрыто веса</div><div class="big">183,5 <span class="of">из 239,5</span></div><div class="bar weight"><span style="width:76.6%"></span></div><div class="barval">76,6%</div></div>
+<div class="metric"><div class="label">Закрыто шагов</div><div class="big">60 <span class="of">из 77</span></div><div class="bar steps"><span style="width:77.9%"></span></div><div class="barval">77,9%</div></div>
+<div class="metric"><div class="label">Закрыто веса</div><div class="big">185,5 <span class="of">из 239,5</span></div><div class="bar weight"><span style="width:77.5%"></span></div><div class="barval">77,5%</div></div>
 </div></section>
 <section class="card outside">
 <h2>Вне нумерации</h2>
@@ -359,23 +360,23 @@ footer p{margin:0}
 <details class="phase" open>
 <summary>
 <span class="pname">Фаза 7</span>
-<span class="pcount">3/8 шагов · 12/31 веса</span>
+<span class="pcount">4/8 шагов · 14/31 веса</span>
 </summary>
 <div class="pbody">
 <div class="grid2">
-<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:37.5%"></span></div><div class="barval">37,5%</div></div>
-<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:38.7%"></span></div><div class="barval">38,7%</div></div>
+<div class="metric small"><div class="label">Доля закрытых шагов</div><div class="bar steps"><span style="width:50.0%"></span></div><div class="barval">50%</div></div>
+<div class="metric small"><div class="label">Доля закрытого веса</div><div class="bar weight"><span style="width:45.2%"></span></div><div class="barval">45,2%</div></div>
 </div>
 <table><thead><tr><th class="c">№</th><th>Шаг</th><th>Сложность</th><th class="c">Вес</th><th>Состояние</th></tr></thead><tbody>
 <tr class="closed"><td class="c mono">70</td><td>Разделение изделий: ядро и пакеты оснастки<div class="prim">Два изделия собраны порознь: ядро одним файлом 1,35 МБ средствами языка, без сторонней сборочной снасти, и пакет оснастки 3,8 КБ, в котором ни строчки кода. Испытание на собранных изделиях, а не в исходниках: ядро провело настоящую выписку пакетом, которого при его сборке не существовало - 3318 записей, байты ядра не изменились. Отказ шага 38 проверен на изделиях и теперь различает незнакомый язык пакета и требование более нового ядра. Подменённый пакет отвергается по отпечатку. Названо, что мешает: новый формат это код, а не пакет  язык оснастки описывает не всё  сторонних библиотек в изделии нет  подписи пакета нет  пакет несёт одно семейство</div></td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
 <tr class="closed"><td class="c mono">71</td><td>Установка на чужой машине<div class="prim">Испытано на чистом месте толмачом, не видящим сторонних библиотек рабочей машины: осмотр, установка, настоящая выписка 827 записей, книга Excel, первый запуск без разработчика. Библиотека книги Excel уложена внутрь изделия - она чистая и переносима - библиотека подписей двоичная и внутрь не укладывается, потому её отсутствие сделано урезанием, а не поломкой: разбор, проверки и Excel работают, подписание паспорта отказывает названной причиной. Установка без сети целиком, прогнана под сторожем, валящим любое обращение наружу - не сработал ни разу. Окружение проверяется до работы: старый язык, нет прав, нет места, нет ядра - каждое названо словами, негодное окружение не ставит ничего. Найден и закрыт дефект: осмотр оставлял пустой каталог, врущий о состоявшейся установке</div></td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
 <tr class="closed"><td class="c mono">72</td><td>Обновление у клиента без потери прошлого<div class="prim">Четыре исхода перехода между версиями и ни одного пятого: годен, преобразовать, переписать, откатить - умолчание откат, а не попытка наугад. Смысловой переход преобразователем не закрывается никогда. Преобразование не переписывает прежнее объявление. Испытано на собранных изделиях: ядро 1 накопило прошлое, ядро 2 дописало своё неизвестное поле, откат на ядро 1 прочёл всё, дописал дальше и ничего не стёр. Главная находка: откат держится не на стирании, а на чтении - закрытая схема прогона от одного чужого поля перестаёт читаться целиком, и расширять её на месте нельзя никогда. Нечитаемое называется и остаётся на месте. Потеря прошлого ловится двумя разными бедами: убыль и подмена цепи, начатой заново</div></td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill closed">закрыт</span></td></tr>
-<tr class="open"><td class="c mono">73</td><td>Перечень состава выпуска</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
+<tr class="closed"><td class="c mono">73</td><td>Перечень состава выпуска<div class="prim">Перечень собирается сборкой, а не пишется руками: имя, версия и лицензия каждой библиотеки читаются из её собственной описи, отпечатки снимаются с того дерева, из которого собирается изделие. Перечень и тексты лицензий едут внутри изделия, копия с отпечатком изделия ложится рядом. Клиент смотрит состав и лицензии сам, командами ядра. Испытано порчей настоящего изделия: подмена изделия, подмена содержимого уложенной библиотеки, приехавший неописанным чужой код и обещанная, но отсутствующая библиотека - каждое названо своим объяснением. Лицензия верхнего уровня вложенных не отменяет: тексты обеих чужих лицензий внутри, отсутствие текста - беда. Уязвимости станок сам не знает и без ленты не говорит, что чисто. Найдено: одна уложенная библиотека объявлена под MIT, а в тексте помянуты PSF, BSD и GPL - подано как повод прочитать человеку, а не как обязательство</div></td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill closed">закрыт</span></td></tr>
 <tr class="open"><td class="c mono">74</td><td>Лицензирование и техническая защита поставки</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
 <tr class="open"><td class="c mono">75</td><td>Решение владельца: тарифы и условия подписки</td><td class="cx">сложный</td><td class="c mono">4</td><td><span class="pill open">не начат</span></td></tr>
 <tr class="open"><td class="c mono">76</td><td>Доказательный пакет для клиента</td><td class="cx">средний</td><td class="c mono">2</td><td><span class="pill open">не начат</span></td></tr>
 <tr class="open"><td class="c mono">77</td><td>Пилот у внешнего клиента</td><td class="cx">очень сложный</td><td class="c mono">7</td><td><span class="pill open">не начат</span></td></tr>
 </tbody></table></div></details>
 </div></section>
-<footer><p>Источник: <span class="mono">registry/registry.csv</span>, SHA-256 <span class="mono">9A792A5B7489E89A…</span>. Состояния в реестре: закрыт, идёт, не начат. Пересборка: <span class="mono">python pult/build.py</span>.</p></footer>
+<footer><p>Источник: <span class="mono">registry/registry.csv</span>, SHA-256 <span class="mono">EB582691107E0269…</span>. Состояния в реестре: закрыт, идёт, не начат. Пересборка: <span class="mono">python pult/build.py</span>.</p></footer>
 </div>
