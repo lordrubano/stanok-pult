@@ -1,6 +1,6 @@
 {
  "версия": "outbox-manifest/1",
- "отпечаток": "6c9d0b3ba882",
+ "отпечаток": "cbe16febe124",
  "файлы": [
   {
    "имя": "README.md",
@@ -453,6 +453,11 @@
    "sha256": "e467e1cabd1c558dcd73c23400386a0f3b22fbbcbf7be7a632cc121b178fbd20"
   },
   {
+   "имя": "otchet-shag-87.md",
+   "байт": 12484,
+   "sha256": "c0fd8dac3ad85e96816bec590b214d655e1e25a08fae7bbe601c03ba5af32cd0"
+  },
+  {
    "имя": "otmeneno/pokaz-ekranov-2.html",
    "байт": 20333,
    "sha256": "29c7f9d8638d052b805ddb0970abb673f946c2962c59511911425aadf3763888"
@@ -489,8 +494,8 @@
   },
   {
    "имя": "состояние.md",
-   "байт": 99498,
-   "sha256": "8ab529daef3e3e1a9bee90d083d81b6cfcf3cff0789bf54b0fa0c742f2449527"
+   "байт": 102359,
+   "sha256": "264fda535c8f4a6de87dfbafda448dbcd8105f8eafcaa49a3c2a6848804cc7d0"
   }
  ]
 }
