@@ -1,6 +1,6 @@
 {
  "версия": "outbox-manifest/1",
- "отпечаток": "f3d4757cdb2a",
+ "отпечаток": "52a6e622ba3b",
  "файлы": [
   {
    "имя": "README.md",
@@ -231,6 +231,11 @@
    "имя": "otchet-VN-47.md",
    "байт": 6631,
    "sha256": "fbc2655eeaa2cdf45ee76a493d604b3d80acba2b65ca0aaac1899f9fc674c0f9"
+  },
+  {
+   "имя": "otchet-VN-48.md",
+   "байт": 10174,
+   "sha256": "347dc0172c02bf60242ce8bf377b06358cf98cb30f52baf140b72962d761e6ad"
   },
   {
    "имя": "otchet-VN-5.md",
@@ -589,8 +594,8 @@
   },
   {
    "имя": "состояние.md",
-   "байт": 132534,
-   "sha256": "97094c0549626afb6425369fdfaafac1a9466acc42d1e6e02cb8138fe19a98c0"
+   "байт": 134650,
+   "sha256": "23b25a7f6f1aea0fba85678b8a0e8d5431c7aaeac8b8a34a46fdaf76be2bc1d8"
   }
  ]
 }
